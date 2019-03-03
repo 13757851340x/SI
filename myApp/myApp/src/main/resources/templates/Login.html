@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css"
+          href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/material-dashboard.css"/>
+    <link rel="stylesheet" type="text/css" href="/assets/css/MyCSS.css">
+</head>
+<body>
+<h1><i>Autónomos network</i></h1>
+<div class="card">
+
+    <button class="btn btn-round btn btn-primary" data-toggle="modal" data-target="#signupModal" style="margin-left: 90%">
+        <i class="material-icons">assignment</i>
+        SignUp
+    </button>
+    <div class="modal fade" id="signupModal">
+        <div class="modal-dialog modal-signup" role="document">
+            <div class="modal-content">
+                <div class="card card-signup card-plain">
+                    <div class="modal-header">
+                        <h5 class="modal-title card-title">Register</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <i class="material-icons">clear</i>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <form class="form" method="" action="">
+                                <div class="card-body">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <div class="input-group-text"><i class="material-icons">face</i></div>
+                                            </div>
+                                            <input type="text" class="form-control" placeholder="Nombre...">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <div class="input-group-text"><i class="material-icons">email</i></div>
+                                            </div>
+                                            <input type="text" class="form-control" placeholder="Email...">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <div class="input-group-text"><i class="material-icons">lock_outline</i>
+                                                </div>
+                                            </div>
+                                            <input type="password" placeholder="Contraseña..." class="form-control"/>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="row">
+                                        <div class="col-5" style="margin-left: auto">
+                                            <label><input type="radio" name="roles" value="admin">Cliente</label>
+                                        </div>
+                                        <div class="col-5" style="margin-left: auto">
+                                            <label><input type="radio" name="roles" value="user">profesional</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-check">
+                                        <label class="form-check-label">
+                                            <input class="form-check-input" type="checkbox" value="" checked>
+                                            <span class="form-check-sign">
+                                                <span class="check"></span>
+                                            </span>
+                                            Estoy deacuerdo con <a href="#something">los terminos y el condición de uso</a>.
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="modal-footer justify-content-center">
+                                    <a href="#pablo" class="btn btn-primary btn-round">Get Started</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid col-md-5">
+        <div class="card col-md-10">
+            <div class="card-header card-header-primary">
+                <h4 class="card-title"><i class="material-icons">person</i>Login</h4>
+            </div>
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="usr">Usuario:</label>
+                    <input type="text" class="form-control" id="usr">
+                </div>
+                <div class="form-group">
+                    <label for="pwd">Contraseña:</label>
+                    <input type="password" class="form-control" id="pwd">
+                </div>
+                <button type="button" class="btn btn-primary" style="margin-left: 40%">Log in</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="../assets/js/core/jquery.min.js" type="text/javascript"></script>
+<script src="../assets/js/core/popper.min.js" type="text/javascript"></script>
+<script src="../assets/js/core/bootstrap-material-design.min.js" type="text/javascript"></script>
+<script src="../assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+<!--  Google Maps Plugin    -->
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+<!-- Chartist JS -->
+<script src="../assets/js/plugins/chartist.min.js"></script>
+<!--  Notifications Plugin    -->
+<script src="../assets/js/plugins/bootstrap-notify.js"></script>
+<!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
+<script src="../assets/js/material-dashboard.js?v=2.1.1" type="text/javascript"></script>
+</body>
+</html>

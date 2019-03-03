@@ -1,4 +1,8 @@
 package autonomoNetwork.myApp.Repository;
 
-public interface UserRepository {
+import autonomoNetwork.myApp.Model.User;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface UserRepository extends JpaRepository<User,String> {
+
 }
