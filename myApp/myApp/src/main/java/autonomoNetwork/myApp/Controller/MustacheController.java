@@ -24,9 +24,5 @@ public class MustacheController {
         return "PerfilProfesional";
     }
 
-    @GetMapping("/customer")
-    public String customer (Model model){
-        model.addAttribute("isCustomer",true);
-        return "PerfilCliente";
-    }
+    
 }
