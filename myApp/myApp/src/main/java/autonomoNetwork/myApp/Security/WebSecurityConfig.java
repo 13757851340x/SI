@@ -1,5 +1,5 @@
-//package autonomoNetwork.myApp.Security;
-//
+package autonomoNetwork.myApp.Security;
+
 //import org.springframework.context.annotation.Bean;
 //import org.springframework.context.annotation.Configuration;
 //import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -13,7 +13,7 @@
 //
 //@Configuration
 //@EnableWebSecurity
-//public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+public class WebSecurityConfig {//extends WebSecurityConfigurerAdapter {
 //
 //    @Override
 //    protected void configure(HttpSecurity http) throws Exception {
@@ -48,4 +48,4 @@
 //        // TODO: update Password Encoder
 //        return NoOpPasswordEncoder.getInstance();
 //    }
-//}
+}
