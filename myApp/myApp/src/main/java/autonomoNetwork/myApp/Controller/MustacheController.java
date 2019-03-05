@@ -11,4 +11,10 @@ public class MustacheController {
         model.addAttribute("isLogin", true);
         return "Login";
     }
+
+    @GetMapping("/signUp")
+    public String SignUp(Model model) {
+        model.addAttribute("isSignUp", true);
+        return "SignUpModal";
+    }
 }

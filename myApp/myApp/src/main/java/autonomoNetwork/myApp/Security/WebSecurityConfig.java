@@ -19,13 +19,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                .antMatchers("/login", "/login_error", "/logout", "/signUp", "/units", "/", "/error").permitAll()
-                .antMatchers("/units/**").authenticated()
+                .antMatchers("/login", "/login_error", "/logout", "/signUp", "/", "/error").permitAll()
                 .anyRequest().hasRole("admin")
                 .and()
                 .formLogin()
                 .loginPage("/login").permitAll()
-                .defaultSuccessUrl("/units", true)
                 .failureUrl("/login_error")
                 .and()
                 .logout().logoutUrl("/logout").logoutSuccessUrl("/").permitAll();
