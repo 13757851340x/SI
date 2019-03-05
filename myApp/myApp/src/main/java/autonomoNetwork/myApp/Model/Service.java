@@ -44,7 +44,9 @@ public class Service {
 
     }
 
-    public void removeUser (){
-
+    public void removeUser (User user){
+        if (this.user != null){
+            this.user.remove(user);
+        }
     }
 }

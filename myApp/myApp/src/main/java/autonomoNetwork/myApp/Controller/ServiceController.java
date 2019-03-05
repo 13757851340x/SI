@@ -28,7 +28,8 @@ public class ServiceController {
 
     @DeleteMapping("/{view}/{form}")
     public ResponseEntity<?> removeUser (@PathVariable User user, @PathVariable Service service){
-
+        service.removeUser(user);
+        this.serviceRepository.save(service);
         return ResponseEntity.noContent().build();
     }
 }
