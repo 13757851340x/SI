@@ -17,4 +17,5 @@ public class MustacheController {
         model.addAttribute("isSignUp", true);
         return "SignUpModal";
     }
+    
 }
