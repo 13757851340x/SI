@@ -70,7 +70,7 @@
                 <td>20/07/2018-19:00</td>
                 <td>John</td>
                 <td>Fontanería</td>
-                <td>Calle tuñipán Mostoles</td>
+                <td>Calle tulipán Mostoles</td>
                 <td class="td-actions text-right">
                     <button type="button" rel="tooltip" class="btn btn-info btn-round">
                         <i class="material-icons">info</i>
@@ -164,7 +164,7 @@
             </tbody>
         </table>
     </div>
-    <div class="modal fade" id="infoProfesional" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal fade" id="añadirServicio" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -207,6 +207,12 @@
                         <div class="form-group">
                             <label><p>Profesional: <input type="text" name="nombre"></p></label>
                         </div>
+                        <td class="td-actions text-right">
+                            <button type="button" class="btn btn-primary btn-round" data-toggle="modal" data-target="#confirmacionCambios">
+                                Añadir
+                            </button>
+                        </td>
+
 
                     </div>
                 </div>
@@ -214,6 +220,85 @@
             </div>
         </div>
     </div>
+
+    <div class="modal fade" id="editarServicio" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Información del servicio</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form method="get">
+                    <div class="modal-body">
+                        <div class="perfilProfesional">
+                            <div class="form-group">
+                                <label><p>Nombre: <input type="text" name="nombre"></p></label>
+                            </div>
+
+                            <div class="form-group">
+                                <label><p>Categoría: <input type="text" name="tipo"></p></label>
+                            </div>
+
+                            <div class="dropdown">
+                                <label><p>Horas estimadas:
+                                    <select name="Horas estimadas" size="1">
+                                        <option value="1" selected>1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                    </select></p>
+                                </label>
+                            </div>
+
+                            <div class="form-group">
+                                <label><p>Descripción: </p> <textarea name="descripcion" rows="3" cols="40"></textarea></label>
+                            </div>
+
+                            <div class="form-group">
+                                <label><p>Precio total: <input type="text" name="descripcion" size="5"> €</p></label>
+                            </div>
+
+                            <div class="form-group">
+                                <label><p>Profesional: <input type="text" name="nombre"></p></label>
+                            </div>
+                            <td class="td-actions text-right">
+                                <button type="button" class="btn btn-primary btn-round" data-toggle="modal" data-target="#confirmacionCambios">
+                                Editar
+                                </button>
+                            </td>
+
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="confirmacionCambios" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Guardar cambios</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    ¿Estás seguro de que quieres guardar los cambios?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <div class="tab-pane" id="link3" aria-expanded="false" style="margin-left: 5%">
         <div class="container-fluid col-md-10">
             <div class="card col-md-10">
@@ -240,7 +325,7 @@
                                 </div>
 
                                 <button type="button" rel="tooltip" class="btn btn-info btn-round btn-fab" data-toggle="modal"
-                                        data-target="#infoProfesional">
+                                        data-target="#añadirServicio">
                                     <i class="material-icons">add_circle</i>
                                 </button>
                             </form>
@@ -248,8 +333,14 @@
                     </div>
                     <div>
                         <label>Electricista</label>
-                        <button class="btn btn-info btn-round btn-fab">
+                        <button type="button" rel="tooltip" class="btn btn-info btn-round btn-fab" data-toggle="modal" data-target="#añadirServicio">
                             <i class="material-icons">info</i>
+                        </button>
+                        <button type="button" rel="tooltip" class="btn btn-success btn-round btn-fab" data-toggle="modal" data-target="#editarServicio">
+                            <i class="material-icons">edit</i>
+                        </button>
+                        <button type="button" rel="tooltip" class="btn btn-danger btn-round btn-fab">
+                            <i class="material-icons">delete</i>
                         </button>
                     </div>
                     <div>
@@ -257,11 +348,23 @@
                         <button class="btn btn-info btn-round btn-fab">
                             <i class="material-icons">info</i>
                         </button>
+                        <button type="button" rel="tooltip" class="btn btn-success btn-round btn-fab" data-toggle="modal" data-target="#editarServicio">
+                            <i class="material-icons">edit</i>
+                        </button>
+                        <button type="button" rel="tooltip" class="btn btn-danger btn-round btn-fab">
+                            <i class="material-icons">delete</i>
+                        </button>
                     </div>
                     <div>
                         <label>Informático</label>
                         <button class="btn btn-info btn-round btn-fab">
                             <i class="material-icons">info</i>
+                        </button>
+                        <button type="button" rel="tooltip" class="btn btn-success btn-round btn-fab" data-toggle="modal" data-target="#editarServicio">
+                            <i class="material-icons">edit</i>
+                        </button>
+                        <button type="button" rel="tooltip" class="btn btn-danger btn-round btn-fab">
+                            <i class="material-icons">delete</i>
                         </button>
                     </div>
                 </div>
