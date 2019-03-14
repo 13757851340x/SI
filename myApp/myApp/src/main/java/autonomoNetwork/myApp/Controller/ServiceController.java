@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.persistence.EntityNotFoundException;
 
 @Controller
+@RequestMapping("service")
 public class ServiceController {
     private ServiceRepository serviceRepository;
     public ServiceController(ServiceRepository serviceRepository){
@@ -21,7 +22,7 @@ public class ServiceController {
         return this.serviceRepository.findById(id).orElseThrow(() -> new EntityNotFoundException(Service.class.getName() + " not found with id " + id));
     }
 
-    @PostMapping("/{service_id}")
+    @PostMapping("/{id}")
     public void addUser (@ModelAttribute User user, @PathVariable Long service_id){
         Service service = this.serviceRepository.findById(service_id).orElseThrow(()-> new EntityNotFoundException(Service.class.getName()+"not found with id" + service_id));
         service.addUser(user);

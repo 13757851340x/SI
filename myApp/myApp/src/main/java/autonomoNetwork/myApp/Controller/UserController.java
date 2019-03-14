@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.persistence.EntityNotFoundException;
 
 @Controller
+@RequestMapping("user")
 public class UserController {
     private UserRepository userRepository;
     public UserController (UserRepository userRepository){
@@ -22,7 +23,7 @@ public class UserController {
         return this.userRepository.findById(id).orElseThrow(() -> new EntityNotFoundException(Service.class.getName() + " not found with id " + id));
     }
 
-    @PostMapping("/{user_id}")
+    @PostMapping("/{user_id}/{request_id}")
     public void addRequest (@ModelAttribute Request request, @PathVariable String user_id){
         User user = this.userRepository.findById(user_id).orElseThrow(()-> new EntityNotFoundException(Service.class.getName()+"not found with id" + user_id));
         user.addRequest(request);
@@ -36,14 +37,14 @@ public class UserController {
         return ResponseEntity.noContent().build();
     }
 
-    @PostMapping("/{user_id}")
+    @PostMapping("/{user_id}/{service_id}")
     public void addService (@ModelAttribute Service service, @PathVariable String user_id){
         User user = this.userRepository.findById(user_id).orElseThrow(()-> new EntityNotFoundException(Service.class.getName()+"not found with id" + user_id));
         user.addService(service);
         this.userRepository.save(user);
     }
 
-    @DeleteMapping("/{user}/{request}")
+    @DeleteMapping("/{user}/{service}")
     public ResponseEntity<?> removeService (@PathVariable User user, @PathVariable Service service){
         user.removeService(service);
         this.userRepository.save(user);
