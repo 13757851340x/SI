@@ -168,7 +168,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Información del servicio</h5>
+                    <h5 class="modal-title">Añadir servicio</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -231,7 +231,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Información del servicio</h5>
+                    <h5 class="modal-title">Editar servicio</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -283,6 +283,55 @@
                                 Guardar
                             </button>
                         </td>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="informacionServicio" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Información del servicio</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form method="get">
+                    <div class="modal-body">
+
+                        <div class="form-group">
+                            <label for="exampleFormControlInput5"> Nombre: </label>
+
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleFormControlInput6"> Categoría: </label>
+
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect3">Horas estimadas:</label>
+
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label class="control-label" for="exampleFormControlInput7"> Precio:</label>
+                            <div class="row ml-1">
+
+                                <i class="material-icons">euro_symbol</i>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlInput8"> Profesional: </label>
+
+                        </div>
+
+                        <div>
+                            <label for="exampleFormControlTextarea2">Descripción: </label>
+
+                        </div>
 
                     </div>
                 </form>
@@ -367,8 +416,7 @@
                     </div>
                     <div>
                         <label>Electricista</label>
-                        <button type="button" rel="tooltip" class="btn btn-info btn-round btn-fab" data-toggle="modal"
-                                data-target="#añadirServicio">
+                        <button type="button" rel="tooltip" class="btn btn-info btn-round btn-fab" data-toggle="modal" data-target="#informacionServicio">
                             <i class="material-icons">info</i>
                         </button>
                         <button type="button" rel="tooltip" class="btn btn-success btn-round btn-fab"
@@ -381,7 +429,7 @@
                     </div>
                     <div>
                         <label>Fontanero</label>
-                        <button class="btn btn-info btn-round btn-fab">
+                        <button class="btn btn-info btn-round btn-fab" data-toggle="modal" data-target="#informacionServicio">
                             <i class="material-icons">info</i>
                         </button>
                         <button type="button" rel="tooltip" class="btn btn-success btn-round btn-fab"
@@ -394,7 +442,7 @@
                     </div>
                     <div>
                         <label>Informático</label>
-                        <button class="btn btn-info btn-round btn-fab">
+                        <button class="btn btn-info btn-round btn-fab" data-toggle="modal" data-target="#informacionServicio">
                             <i class="material-icons">info</i>
                         </button>
                         <button type="button" rel="tooltip" class="btn btn-success btn-round btn-fab"
