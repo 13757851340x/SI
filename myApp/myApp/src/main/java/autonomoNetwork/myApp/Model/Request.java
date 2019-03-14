@@ -5,6 +5,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.ArrayList;
 
 @Entity
 @Data
@@ -55,4 +56,10 @@ public class Request {
     public Request(){
 
     }
+
+    public void addUser (User user){
+        this.user=user;
+    }
+
+
 }

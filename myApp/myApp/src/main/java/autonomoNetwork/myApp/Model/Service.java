@@ -4,6 +4,8 @@ import lombok.Data;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -29,9 +31,9 @@ public class Service {
     private double cost;
     @OneToMany
     @ElementCollection
-    private Set<User> user;
+    private List<User> user;
 
-    public Service(@NotNull String name, @NotNull String description, @NotNull String category, @NotNull int estimateTime, @NotNull double cost, Set<User> user) {
+    public Service(@NotNull String name, @NotNull String description, @NotNull String category, @NotNull int estimateTime, @NotNull double cost, List<User> user) {
         this.name = name;
         this.description = description;
         this.category = category;
@@ -44,7 +46,13 @@ public class Service {
 
     }
 
-    public void removeUser (){
-
+    public void addUser(User user){
+        if(this.user==null){
+            this.user= new ArrayList<>();
+        }
+        this.user.add(user);
+    }
+    public void removeUser (User user){
+        this.user.remove(user);
     }
 }

@@ -24,11 +24,14 @@ public class ServiceController {
     @PostMapping("/{service_id}")
     public void addUser (@ModelAttribute User user, @PathVariable Long service_id){
         Service service = this.serviceRepository.findById(service_id).orElseThrow(()-> new EntityNotFoundException(Service.class.getName()+"not found with id" + service_id));
+        service.addUser(user);
+        this.serviceRepository.save(service);
     }
 
-    @DeleteMapping("/{view}/{form}")
+    @DeleteMapping("/{user}/{service}")
     public ResponseEntity<?> removeUser (@PathVariable User user, @PathVariable Service service){
-
+        service.removeUser(user);
+        this.serviceRepository.save(service);
         return ResponseEntity.noContent().build();
     }
 }

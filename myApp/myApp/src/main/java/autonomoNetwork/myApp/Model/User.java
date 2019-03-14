@@ -4,6 +4,9 @@ import lombok.Data;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Data
@@ -30,6 +33,12 @@ public class User {
     @Column(nullable = false)
     @NotNull
     private String city;
+    @OneToMany
+    @ElementCollection
+    private List<Request> requests;
+    @OneToMany
+    @ElementCollection
+    private List<Service> services;
 
     public User(String username, @NotNull String password, @NotNull String name, @NotNull String surname, @NotNull String profile, @NotNull String birthday, @NotNull String city) {
         this.username = username;
@@ -43,6 +52,28 @@ public class User {
 
     public User(){
 
+    }
+
+    public void addRequest (Request request){
+        if(this.requests==null){
+            this.requests=new ArrayList<>();
+        }
+        this.requests.add(request);
+    }
+
+    public void removeRequest(Request request){
+        this.requests.remove(request);
+    }
+
+    public void addService (Service service){
+        if (this.services==null){
+            this.services= new ArrayList<>();
+        }
+        this.services.add(service);
+    }
+
+    public void removeService (Service service){
+        this.services.remove(service);
     }
 
 }
