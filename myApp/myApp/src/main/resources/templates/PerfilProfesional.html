@@ -174,7 +174,7 @@
                     </button>
                 </div>
                 <form method="get">
-                <div class="modal-body">
+                    <div class="modal-body">
 
                         <div class="form-group">
                             <label for="exampleFormControlInput1"> Nombre: </label>
@@ -188,7 +188,8 @@
 
                         <div class="form-group">
                             <label for="exampleFormControlSelect2">Horas estimadas:</label>
-                            <select class="form-control selectpicker" data-style="btn btn-link" id="exampleFormControlSelect2">
+                            <select class="form-control selectpicker" data-style="btn btn-link"
+                                    id="exampleFormControlSelect2">
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -196,17 +197,13 @@
                                 <option value="5">5</option>
                             </select>
                         </div>
-
-
                         <div class="form-group col-md-3">
                             <label class="control-label" for="exampleFormControlInput3"> Precio:</label>
                             <div class="row">
-                                <input type="text" name="precio"  class="form-control" id="exampleFormControlInput3">
+                                <input type="text" name="precio" class="form-control row" id="exampleFormControlInput3">
                                 <i class="material-icons">euro_symbol</i>
                             </div>
-
                         </div>
-
                         <div class="form-group">
                             <label for="exampleFormControlInput4"> Profesional: </label>
                             <input type="text" name="profesional" class="form-control" id="exampleFormControlInput4">
@@ -214,18 +211,19 @@
 
                         <div>
                             <label for="exampleFormControlTextarea1">Descripción: </label>
-                            <textarea name="descripcion" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            <textarea name="descripcion" class="form-control" id="exampleFormControlTextarea1"
+                                      rows="3"></textarea>
                         </div>
 
                         <td class="td-actions text-right">
-                            <button type="button" class="btn btn-primary btn-round" data-toggle="modal" data-target="#confirmacionCambios">
+                            <button type="button" class="btn btn-primary btn-round" data-toggle="modal"
+                                    data-target="#confirmacionCambios">
                                 Añadir
                             </button>
                         </td>
 
 
-
-                </div>
+                    </div>
                 </form>
             </div>
         </div>
@@ -252,14 +250,15 @@
                             </div>
 
                             <div class="dropdown">
-                                <label><p>Horas estimadas:
-                                    <select name="Horas estimadas" size="1">
-                                        <option value="1" selected>1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                        <option value="5">5</option>
-                                    </select></p>
+                                <label>
+                                    <p>Horas estimadas:
+                                        <select name="Horas estimadas" size="1">
+                                            <option value="1" selected>1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                        </select></p>
                                 </label>
                             </div>
 
@@ -275,8 +274,9 @@
                                 <label><p>Profesional: <input type="text" name="nombre"></p></label>
                             </div>
                             <td class="td-actions text-right">
-                                <button type="button" class="btn btn-primary btn-round" data-toggle="modal" data-target="#confirmacionCambios">
-                                Editar
+                                <button type="button" class="btn btn-primary btn-round" data-toggle="modal"
+                                        data-target="#confirmacionCambios">
+                                    Editar
                                 </button>
                             </td>
 
@@ -288,7 +288,8 @@
     </div>
 
     <!-- Modal -->
-    <div class="modal fade" id="confirmacionCambios" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal fade" id="confirmacionCambios" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -315,7 +316,7 @@
                 <div class="card-header card-header-primary">
                     <h4 class="card-title"><i class="material-icons">build</i>Servicios</h4>
                 </div>
-                <div class="card-body"  style="margin-left: 10%">
+                <div class="card-body" style="margin-left: 10%">
                     <ul class="nav">
                         <li class="nav-item">
                             <a class="nav-link disabled" href="#0">Ordenado por</a>
@@ -334,7 +335,8 @@
                                     <input type="text" class="form-control" placeholder="Añadir servicio">
                                 </div>
 
-                                <button type="button" rel="tooltip" class="btn btn-info btn-round btn-fab" data-toggle="modal"
+                                <button type="button" rel="tooltip" class="btn btn-info btn-round btn-fab"
+                                        data-toggle="modal"
                                         data-target="#añadirServicio">
                                     <i class="material-icons">add_circle</i>
                                 </button>
@@ -343,10 +345,12 @@
                     </div>
                     <div>
                         <label>Electricista</label>
-                        <button type="button" rel="tooltip" class="btn btn-info btn-round btn-fab" data-toggle="modal" data-target="#añadirServicio">
+                        <button type="button" rel="tooltip" class="btn btn-info btn-round btn-fab" data-toggle="modal"
+                                data-target="#añadirServicio">
                             <i class="material-icons">info</i>
                         </button>
-                        <button type="button" rel="tooltip" class="btn btn-success btn-round btn-fab" data-toggle="modal" data-target="#editarServicio">
+                        <button type="button" rel="tooltip" class="btn btn-success btn-round btn-fab"
+                                data-toggle="modal" data-target="#editarServicio">
                             <i class="material-icons">edit</i>
                         </button>
                         <button type="button" rel="tooltip" class="btn btn-danger btn-round btn-fab">
@@ -358,7 +362,8 @@
                         <button class="btn btn-info btn-round btn-fab">
                             <i class="material-icons">info</i>
                         </button>
-                        <button type="button" rel="tooltip" class="btn btn-success btn-round btn-fab" data-toggle="modal" data-target="#editarServicio">
+                        <button type="button" rel="tooltip" class="btn btn-success btn-round btn-fab"
+                                data-toggle="modal" data-target="#editarServicio">
                             <i class="material-icons">edit</i>
                         </button>
                         <button type="button" rel="tooltip" class="btn btn-danger btn-round btn-fab">
@@ -370,7 +375,8 @@
                         <button class="btn btn-info btn-round btn-fab">
                             <i class="material-icons">info</i>
                         </button>
-                        <button type="button" rel="tooltip" class="btn btn-success btn-round btn-fab" data-toggle="modal" data-target="#editarServicio">
+                        <button type="button" rel="tooltip" class="btn btn-success btn-round btn-fab"
+                                data-toggle="modal" data-target="#editarServicio">
                             <i class="material-icons">edit</i>
                         </button>
                         <button type="button" rel="tooltip" class="btn btn-danger btn-round btn-fab">
@@ -389,36 +395,36 @@
                     <h4 class="card-title"><i class="material-icons">person</i>Mi perfil</h4>
                 </div>
                 <div class="card-body">
-                        <div class="form-group">
-                            <label>Usuario:</label>
-                            ...
-                        </div>
-                        <div class="form-group">
-                            <label>Nombre:</label>
-                            ...
-                        </div>
-                        <div class="form-group">
-                            <label>Contacto:</label>
-                            ...
-                            <button type="button" rel="tooltip" class="btn btn-success btn-round btn-fab ml-5">
-                                <i class="material-icons">edit</i>
-                            </button>
-                        </div>
-                        <div class="form-group">
-                            <label>Email:</label>
-                            ...
-                        </div>
-                        <div class="form-group">
-                            <label>Abilidades:</label>
-                            ...
-                            <button type="button" rel="tooltip" class="btn btn-success btn-round btn-fab ml-5">
-                                <i class="material-icons">add_circle</i>
-                            </button>
-                        </div>
-                        <div class="form-group">
-                            <label>Valoración del profesional:</label>
-                            ⭐⭐⭐⭐⭐
-                        </div>
+                    <div class="form-group">
+                        <label>Usuario:</label>
+                        ...
+                    </div>
+                    <div class="form-group">
+                        <label>Nombre:</label>
+                        ...
+                    </div>
+                    <div class="form-group">
+                        <label>Contacto:</label>
+                        ...
+                        <button type="button" rel="tooltip" class="btn btn-success btn-round btn-fab ml-5">
+                            <i class="material-icons">edit</i>
+                        </button>
+                    </div>
+                    <div class="form-group">
+                        <label>Email:</label>
+                        ...
+                    </div>
+                    <div class="form-group">
+                        <label>Abilidades:</label>
+                        ...
+                        <button type="button" rel="tooltip" class="btn btn-success btn-round btn-fab ml-5">
+                            <i class="material-icons">add_circle</i>
+                        </button>
+                    </div>
+                    <div class="form-group">
+                        <label>Valoración del profesional:</label>
+                        ⭐⭐⭐⭐⭐
+                    </div>
                 </div>
             </div>
         </div>

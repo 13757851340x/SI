@@ -15,13 +15,11 @@ public class MyAppApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(MyAppApplication.class, args);
 	}
-
 	@Bean
-	public CommandLineRunner addData(RequestRepository requestRepository, ServiceRepository serviceRepository, UserRepository userRepository) {
-		return (args)->{
+	public CommandLineRunner addTestData(UserRepository userRepository) {
+		return (args) -> {
 			userRepository.deleteAll();
-			User customer1 = new User ("user","userPass","name","surname","customer","01/01/2000","Madrid");
-			userRepository.save(customer1);
+			User user = new User ("user","pass","name","surname","customer","birthday","city");
 		};
 	}
 }
