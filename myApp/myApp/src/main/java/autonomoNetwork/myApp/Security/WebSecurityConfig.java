@@ -1,5 +1,7 @@
 package autonomoNetwork.myApp.Security;
 
+import autonomoNetwork.myApp.Service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -15,19 +17,29 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {//extends WebSecurityConfigurerAdapter {
+    private UserService userService;
+
+    public WebSecurityConfig(UserService userService) {
+        this.userService = userService;
+    }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                .antMatchers("/login","/professional","/customer").permitAll()
-                .anyRequest().hasRole("admin")
+                .antMatchers("/login").permitAll()
+                .antMatchers("/professional/**").hasRole("professional")
+                .antMatchers("/customer/**").hasRole("customer")
+                .anyRequest().authenticated()
                 .and()
                 .formLogin()
                 .loginPage("/login").permitAll()
+                .defaultSuccessUrl("/index",true)
                 .failureUrl("/login_error")
                 .and()
                 .logout().logoutUrl("/logout").logoutSuccessUrl("/").permitAll();
+        http
+                .csrf().disable();
 
     }
 
@@ -37,11 +49,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {//extends W
     }
 
     @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        // TODO MySQL
-        auth.inMemoryAuthentication().withUser("user").password("pass").roles("USER");
-
-        auth.inMemoryAuthentication().withUser("admin").password("admin").roles("ADMIN");
+    protected void configure(AuthenticationManagerBuilder builder) throws Exception {
+        builder.userDetailsService(this.userService);
     }
 
     @Bean

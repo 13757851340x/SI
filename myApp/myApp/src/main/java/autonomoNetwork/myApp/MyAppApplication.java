@@ -19,7 +19,10 @@ public class MyAppApplication {
 	public CommandLineRunner addTestData(UserRepository userRepository) {
 		return (args) -> {
 			userRepository.deleteAll();
-			User user = new User ("user","pass","name","surname","customer","birthday","city");
+			User user1 = new User ("customer","pass","name","surname","customer","birthday","city");
+			User user2 = new User ("professional","pass","name","surname","professional","birthday","city");
+			userRepository.save(user1);
+			userRepository.save(user2);
 		};
 	}
 }

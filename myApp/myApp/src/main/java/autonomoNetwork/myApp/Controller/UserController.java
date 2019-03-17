@@ -9,6 +9,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.persistence.EntityNotFoundException;
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 
 @Controller
 @RequestMapping("user")
@@ -49,5 +51,15 @@ public class UserController {
         user.removeService(service);
         this.userRepository.save(user);
         return ResponseEntity.noContent().build();
+    }
+
+    @PostMapping("/signUp")
+    public String signUp(@Valid @NotNull @ModelAttribute("user") User user) {
+        if (this.userRepository.existsByUsername(user.getUsername())) {
+            return "redirect:/signUp";
+        } else {
+            this.userRepository.save(user);
+            return "redirect:/login";
+        }
     }
 }
