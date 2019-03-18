@@ -22,7 +22,12 @@ public class ServiceController {
         return this.serviceRepository.findById(id).orElseThrow(() -> new EntityNotFoundException(Service.class.getName() + " not found with id " + id));
     }
 
-    @PostMapping("/{id}")
+    @PostMapping
+    public void addService (@ModelAttribute Service service){
+        this.serviceRepository.save(service);
+    }
+
+    @PostMapping("/{id}/{user}")
     public void addUser (@ModelAttribute User user, @PathVariable Long service_id){
         Service service = this.serviceRepository.findById(service_id).orElseThrow(()-> new EntityNotFoundException(Service.class.getName()+"not found with id" + service_id));
         service.addUser(user);

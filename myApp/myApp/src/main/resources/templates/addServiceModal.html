@@ -1,0 +1,64 @@
+<div class="modal fade" id="añadirServicio" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Añadir servicio</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="/service" method="post">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1"> Nombre: </label>
+                        <input type="text" name="name" class="form-control" id="exampleFormControlInput1">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleFormControlInput2"> Categoría: </label>
+                        <input type="text" name="category" class="form-control" id="exampleFormControlInput2">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect2">Horas estimadas:</label>
+                        <select class="form-control selectpicker" data-style="btn btn-link" name="estimateTime"
+                                id="exampleFormControlSelect2">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label class="control-label" for="exampleFormControlInput3"> Precio:</label>
+                        <div class="row ml-1">
+                            <input type="text" name="cost" class="form-control row" id="exampleFormControlInput3">
+
+                            <i class="material-icons" style="font-size: 22px">euro_symbol</i>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlInput4"> Profesional: </label>
+                        <input type="text" name="user" class="form-control" id="exampleFormControlInput4">
+                    </div>
+
+                    <div>
+                        <label for="exampleFormControlTextarea1">Descripción: </label>
+                        <textarea name="description" class="form-control" id="exampleFormControlTextarea1"
+                                  rows="3"></textarea>
+                    </div>
+
+                    <td class="td-actions text-right">
+                        <button type="submit" class="btn btn-primary btn-round" onclick="">
+                            <!--data-toggle="modal"-->
+                            <!--data-target="#confirmacionCambios"-->
+                            Añadir
+                        </button>
+                    </td>
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

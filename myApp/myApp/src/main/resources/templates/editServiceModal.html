@@ -1,0 +1,62 @@
+<div class="modal fade" id="editarServicio" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Editar servicio</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form method="get">
+                <div class="modal-body">
+
+                    <div class="form-group">
+                        <label for="exampleFormControlInput5"> Nombre: </label>
+                        <input type="text" name="nombre" class="form-control" id="exampleFormControlInput5">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleFormControlInput6"> Categoría: </label>
+                        <input type="text" name="categoria" class="form-control" id="exampleFormControlInput6">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect3">Horas estimadas:</label>
+                        <select class="form-control selectpicker" data-style="btn btn-link"
+                                id="exampleFormControlSelect3">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label class="control-label" for="exampleFormControlInput7"> Precio:</label>
+                        <div class="row ml-1">
+                            <input type="text" name="precio" class="form-control row" id="exampleFormControlInput7">
+
+                            <i class="material-icons" style="font-size: 22px">euro_symbol</i>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlInput8"> Profesional: </label>
+                        <input type="text" name="profesional" class="form-control" id="exampleFormControlInput8">
+                    </div>
+
+                    <div>
+                        <label for="exampleFormControlTextarea2">Descripción: </label>
+                        <textarea name="descripcion" class="form-control" id="exampleFormControlTextarea2" rows="3"></textarea>
+                    </div>
+
+                    <td class="td-actions text-right">
+                        <button type="button" class="btn btn-primary btn-round" data-toggle="modal" data-target="#confirmacionCambios">
+                            Guardar
+                        </button>
+                    </td>
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
