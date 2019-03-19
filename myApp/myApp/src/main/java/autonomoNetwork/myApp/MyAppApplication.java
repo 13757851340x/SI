@@ -21,8 +21,10 @@ public class MyAppApplication {
 			userRepository.deleteAll();
 			User user1 = new User ("customer","pass","name","surname","customer","birthday","city");
 			User user2 = new User ("professional","pass","name","surname","professional","birthday","city");
+			User user3 = new User ("analyst","pass","name","surname","analyst","birthday","city");
 			userRepository.save(user1);
 			userRepository.save(user2);
+			userRepository.save(user3);
 		};
 	}
 }

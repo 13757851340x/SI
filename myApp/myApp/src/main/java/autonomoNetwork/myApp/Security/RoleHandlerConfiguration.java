@@ -22,6 +22,7 @@ public class RoleHandlerConfiguration implements WebMvcConfigurer {
                     modelAndView.addObject("hasLogin",true);
                     modelAndView.addObject("isProfessional", request.isUserInRole("professional"));
                     modelAndView.addObject("isCustomer", request.isUserInRole("customer"));
+                    modelAndView.addObject("isAnalyst",request.isUserInRole("analyst"));
                 }else{
                     modelAndView.addObject("isProfessional",false);
                     modelAndView.addObject("isCustomer",false);
