@@ -1,16 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>PerfilCliente</title>
-    <link rel="stylesheet" type="text/css"
-          href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons"/>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="../assets/css/material-dashboard.css"/>
-    <link rel="stylesheet" type="text/css" href="../assets/css/MyCSS.css">
-</head>
-<body>
 <h1><i>Autónomos network</i></h1>
+{{>requestListModal}}
+<div class="form-group text-right dropdown">
+    <button class="btn btn-primary btn-round dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="material-icons">person</i> Jorge Javier Vázquez
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="#">Mi perfil</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="#">Cerrar sesión</a>
+    </div>
+
+</div>
 <ul class="nav nav-pills nav-pills-primary" role="tablist">
     <li class="nav-item">
         <a class="nav-link active" data-toggle="tab" href="#link1" role="tablist" aria-expanded="true">
@@ -33,288 +33,173 @@
         </a>
     </li>
 </ul>
+
 <div class="tab-content tab-space">
-    <div class="tab-pane active" id="link1" aria-expanded="false">
-        <br>
-        <div class="row ml-5">
-            <div class="form-check form-check-radio form-check-inline">
-                <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-                           value="option1">
-                    Servicio
-                    <span class="circle">
-                        <span class="check"></span>
-                    </span>
-                </label>
-            </div>
-            <div class="form-check form-check-radio form-check-inline">
-                <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
-                           value="option2">
-                    Profesional
-                    <span class="circle">
-                        <span class="check"></span>
-                    </span>
-                </label>
-            </div>
-            <div class="form-check form-check-radio form-check-inline">
-                <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
-                           value="option3">
-                    Lugar
-                    <span class="circle">
-                        <span class="check"></span>
-                    </span>
-                </label>
-            </div>
-            <div class="col-5 mx-5">
-                <form class="form-inline ml-auto">
-                    <div class="form-group no-border">
-                        <input type="text" class="form-control" placeholder="Search" value="Madrid">
-                    </div>
-                    <button type="submit" class="btn btn-just-icon btn-round">
-                        <i class="material-icons">search</i>
-                    </button>
-                </form>
-            </div>
-        </div>
+    <div class="tab-pane active" id="link1" aria-expanded="true">
         <table class="table">
             <thead>
             <tr>
                 <th class="text-center"></th>
-                <th>Servicio</th>
-                <th>Profesional</th>
-                <th>Lugares ofrecidos</th>
+                <th>Nombre del servicio</th>
+                <th>Nombre del profesional</th>
+
             </tr>
             </thead>
             <tbody>
             <tr>
                 <td class="text-center">1</td>
-                <td>
-                    Electricidad
-                    <button type="button" rel="tooltip" class="btn btn-info btn-round btn-fab">
-                        <i class="material-icons">info</i>
-                    </button>
-                </td>
-                <td>Andrés
-                    <button type="button" rel="tooltip" class="btn btn-info btn-round btn-fab" data-toggle="modal"
-                            data-target="#infoProfesional">
-                        <i class="material-icons">info</i>
-                    </button>
-                </td>
-                <td>Madrid</td>
-                <td><button class="btn btn-success btn-round" data-toggle="modal"
-                            data-target="#solicitud">Solicitar servicio</button></td>
+                <td>Arreglo de caldera</td>
+                <td>Andrés</td>
+
             </tr>
             <tr>
                 <td class="text-center">2</td>
-                <td>
-                    Fontaneria
-                    <button type="button" rel="tooltip" class="btn btn-info btn-round btn-fab">
-                        <i class="material-icons">info</i>
-                    </button>
-                </td>
-                <td>Rubén
-                    <button type="button" rel="tooltip" class="btn btn-info btn-round btn-fab" data-toggle="modal"
-                            data-target="#infoProfesional">
-                        <i class="material-icons">info</i>
-                    </button>
-                </td>
-                <td>Madrid</td>
-                <td><button class="btn btn-success btn-round" data-toggle="modal"
-                            data-target="#solicitud">Solicitar servicio</button></td>
+                <td>Arreglo de enchufe</td>
+                <td>John</td>
             </tr>
             <tr>
                 <td class="text-center">3</td>
-                <td>
-                    Informatica
-                    <button type="button" rel="tooltip" class="btn btn-info btn-round btn-fab">
-                        <i class="material-icons">info</i>
-                    </button>
-                </td>
-                <td>Alex
-                    <button type="button" rel="tooltip" class="btn btn-info btn-round btn-fab " data-toggle="modal"
-                            data-target="#infoProfesional">
-                        <i class="material-icons">info</i>
-                    </button>
-                </td>
-                <td>Madrid</td>
-                <td><button class="btn btn-success btn-round" data-toggle="modal"
-                            data-target="#solicitud">Solicitar servicio</button></td>
+                <td>Corte de pelo</td>
+                <td>Alex</td>
+
             </tr>
             </tbody>
         </table>
-        <div class="modal fade" id="infoProfesional" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Información profesional</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="perfilProfesional">
-                            <div class="form-group">
-                                <label>Usuario:</label>
-                                ..............
-                            </div>
-                            <div class="form-group">
-                                <label>Nombre:</label>
-                                ..............
-                            </div>
-                            <div class="form-group">
-                                <label>Contacto:</label>
-                                ..............
-                            </div>
-                            <div class="form-group">
-                                <label>Email:</label>
-                                ...................
-                            </div>
-                            <div class="form-group">
-                                <label>Abilidades:</label>
-                                ................
-                            </div>
-                            <div class="form-group">
-                                <label>Descripción general:</label>
-                                .....................
-                            </div>
-                            <div class="form-group">
-                                <label>Valoración del profesional:</label>
-                                ⭐⭐⭐⭐⭐
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="modal fade" id="solicitud" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Solicitud de servicio</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <form>
-                            <div class="form-group">
-                                <label for="exampleFormControlInput1">Address</label>
-                                <input type="email" class="form-control" id="exampleFormControlInput1">
-                            </div>
-                        </form>
-                        <div class="form-group row">
-                            <div class="select-mounth col-4">
-                                <label >Mounth</label>
-                                <select class="form-control selectpicker" data-style="btn btn-link">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>................</option>
-                                </select>
-                            </div>
-                            <div class="select-day col-4">
-                                <label >Day</label>
-                                <select class="form-control selectpicker" data-style="btn btn-link">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>...............................</option>
-                                </select>
-                            </div>
-                            <div class="select-time col-4">
-                                <label >Time</label>
-                                <select class="form-control selectpicker" data-style="btn btn-link">
-                                    <option>9:00</option>
-                                    <option>10:00</option>
-                                    <option>11:00</option>
-                                    <option>...............................</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar
-                        </button>
-                        <button type="button" class="btn btn-success">Solicitar</button>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
     <div class="tab-pane" id="link2" aria-expanded="false">
-        <div class="container-fluid col-md-10">
-            <div class="card col-md-10">
-                <div class="card-header card-header-primary">
-                    <h4 class="card-title"><i class="material-icons">person</i>Historial de usuario</h4>
-                </div>
-                <div class="card-body">
-                    <div class="solicitud ml-5">
-                        <label>Solicitud1</label>
-                        <button class="btn btn-info btn-round btn-fab">
-                            <i class="material-icons">info</i>
-                        </button>
-                        <div>
-                            <label>Solicitud2</label>
-                            <button class="btn btn-info btn-round btn-fab">
-                                <i class="material-icons">info</i>
-                            </button>
-                        </div>
-                        <div>
-                            <label>Solicitud3</label>
-                            <button class="btn btn-info btn-round btn-fab">
-                                <i class="material-icons">info</i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <table class="table">
+            <thead>
+            <tr>
+                <th class="text-center"></th>
+                <th>Nombre del servicio</th>
+                <th>Nombre del profesional</th>
+                <th>Veces solicitado</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td class="text-center">1</td>
+                <td>Arreglo de caldera</td>
+                <td>Andrés</td>
+                <td>6</td>
+
+                <td class="td-actions text-right">
+                    <button type="button" rel="tooltip" class="btn btn-primary btn-round">
+                        consultar
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td class="text-center">2</td>
+                <td>Arreglo de enchufe</td>
+                <td>John</td>
+                <td>4</td>
+
+                <td class="td-actions text-right">
+                    <button type="button" rel="tooltip" class="btn btn-primary btn-round">
+                        consultar
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td class="text-center">3</td>
+                <td>Corte de pelo</td>
+                <td>Alex</td>
+                <td>1</td>
+
+                <td class="td-actions text-right">
+                    <button type="button" rel="tooltip" class="btn btn-primary btn-simple btn-round">
+                        consultar
+                    </button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
     </div>
+
     <div class="tab-pane" id="link3" aria-expanded="false">
-        <div class="container-fluid col-md-10">
-            <div class="card col-md-10">
-                <div class="card-header card-header-primary">
-                    <h4 class="card-title"><i class="material-icons">person</i>Mi perfil</h4>
-                </div>
-                <div class="card-body">
-                    <div class="form-group">
-                        <label>Usuario:</label>
-                        ...
-                    </div>
-                    <div class="form-group">
-                        <label>Nombre:</label>
-                        ...
-                    </div>
-                    <div class="form-group">
-                        <label>Contacto:</label>
-                        ...
-                        <button type="button" rel="tooltip" class="btn btn-success btn-round">
-                            <i class="material-icons">edit</i>
-                        </button>
-                    </div>
-                    <div class="form-group">
-                        <label>Email:</label>
-                        ...
-                    </div>
-                </div>
-            </div>
-        </div>
+        <table class="table">
+            <thead>
+            <tr>
+                <th class="text-center"></th>
+                <th>Nombre del servicio</th>
+                <th>Nombre del profesional</th>
+                <th>Solicitudes completadas</th>
+                <th>Beneficio total</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td class="text-center">1</td>
+                <td>Arreglo de caldera</td>
+                <td>Andrés</td>
+                <td>6</td>
+                <td>228€</td>
+            </tr>
+            <tr>
+                <td class="text-center">2</td>
+                <td>Arreglo de enchufe</td>
+                <td>John</td>
+                <td>4</td>
+                <td>120€</td>
+
+            </tr>
+            <tr>
+                <td class="text-center">3</td>
+                <td>Corte de pelo</td>
+                <td>Alex</td>
+                <td>1</td>
+                <td>15€</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="tab-pane" id="link4" aria-expanded="false">
+        <table class="table">
+            <thead>
+            <tr>
+                <th class="text-center"></th>
+                <th>Nombre del profesional</th>
+                <th>Servicios solicitados</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td class="text-center">1</td>
+                <td>Andrés</td>
+                <td>4</td>
+
+                <td class="td-actions text-right">
+                    <button type="button" rel="tooltip" class="btn btn-primary btn-simple btn-round" data-toggle="modal" data-target="#listaSolicitudes">
+                        solicitudes
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td class="text-center" >2</td>
+                <td>John</td>
+                <td>2</td>
+
+                <td class="td-actions text-right">
+                    <button type="button" rel="tooltip" class="btn btn-primary btn-simple btn-round" data-toggle="modal" data-target="#listaSolicitudes">
+                        solicitudes
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td class="text-center">3</td>
+                <td>Alex</td>
+                <td>1</td>
+
+                <td class="td-actions text-right">
+                    <button type="button" rel="tooltip" class="btn btn-primary btn-simple btn-round" data-toggle="modal" data-target="#listaSolicitudes">
+                        solicitudes
+                    </button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
     </div>
 </div>
-
-<script src="../assets/js/core/jquery.min.js" type="text/javascript"></script>
-<script src="../assets/js/core/popper.min.js" type="text/javascript"></script>
-<script src="../assets/js/core/bootstrap-material-design.min.js" type="text/javascript"></script>
-<script src="../assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
-<!--  Google Maps Plugin    -->
-<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
-<!-- Chartist JS -->
-<script src="../assets/js/plugins/chartist.min.js"></script>
-<!--  Notifications Plugin    -->
-<script src="../assets/js/plugins/bootstrap-notify.js"></script>
-<!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
-<script src="../assets/js/material-dashboard.js?v=2.1.1" type="text/javascript"></script>
-</body>
-</html>
