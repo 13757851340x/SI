@@ -1,17 +1,17 @@
-
-
 <h1><i>Autónomos network</i></h1>
 <div class="form-group text-right dropdown">
-    <button class="btn btn-primary btn-round dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <button class="btn btn-primary btn-round dropdown-toggle" type="button" id="dropdownMenuButton"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <i class="material-icons">person</i> Jorge Javier Vázquez
     </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="#">Mi perfil</a>
-            <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Cerrar sesión</a>
-        </div>
-
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="#">Mi perfil</a>
+        <div class="dropdown-divider"></div>
+        <form action="/logout" method="post">
+            <button type="submit" class="dropdown-item">Cerrar sesión</button>
+        </form>
     </div>
+</div>
 <ul class="nav nav-pills nav-pills-primary" role="tablist">
     <li class="nav-item">
         <a class="nav-link active" data-toggle="tab" href="#link1" role="tablist" aria-expanded="true">
@@ -171,7 +171,6 @@
     {{>confirmationModal}}
 
 
-
     <div class="tab-pane" id="link3" aria-expanded="false" style="margin-left: 5%">
         <div class="container-fluid col-md-10">
             <div class="card col-md-10">
@@ -194,7 +193,8 @@
                         <div class="col-10">
                             <form class="form-inline ml-auto">
 
-                                <button type="button" rel="tooltip" class="btn btn-primary btn-round"data-toggle="modal"
+                                <button type="button" rel="tooltip" class="btn btn-primary btn-round"
+                                        data-toggle="modal"
                                         data-target="#añadirServicio">
                                     <i class="material-icons">add_circle</i> Añadir servicio
                                 </button>
@@ -205,40 +205,46 @@
                     </div>
                     <div>
                         <label>Electricista</label>
-                        <button type="button" rel="tooltip" class="btn btn-info btn-round btn-fab" data-toggle="modal" data-target="#informacionServicio">
+                        <button type="button" rel="tooltip" class="btn btn-info btn-round btn-fab" data-toggle="modal"
+                                data-target="#informacionServicio">
                             <i class="material-icons">info</i>
                         </button>
                         <button type="button" rel="tooltip" class="btn btn-success btn-round btn-fab"
                                 data-toggle="modal" data-target="#editarServicio">
                             <i class="material-icons">edit</i>
                         </button>
-                        <button type="button" rel="tooltip" class="btn btn-danger btn-round btn-fab" data-toggle="modal" data-target="#confirmacionBorrado">
+                        <button type="button" rel="tooltip" class="btn btn-danger btn-round btn-fab" data-toggle="modal"
+                                data-target="#confirmacionBorrado">
                             <i class="material-icons">delete</i>
                         </button>
                     </div>
                     <div>
                         <label>Fontanero</label>
-                        <button class="btn btn-info btn-round btn-fab" data-toggle="modal" data-target="#informacionServicio">
+                        <button class="btn btn-info btn-round btn-fab" data-toggle="modal"
+                                data-target="#informacionServicio">
                             <i class="material-icons">info</i>
                         </button>
                         <button type="button" rel="tooltip" class="btn btn-success btn-round btn-fab"
                                 data-toggle="modal" data-target="#editarServicio">
                             <i class="material-icons">edit</i>
                         </button>
-                        <button type="button" rel="tooltip" class="btn btn-danger btn-round btn-fab" data-toggle="modal" data-target="#confirmacionBorrado">
+                        <button type="button" rel="tooltip" class="btn btn-danger btn-round btn-fab" data-toggle="modal"
+                                data-target="#confirmacionBorrado">
                             <i class="material-icons">delete</i>
                         </button>
                     </div>
                     <div>
                         <label>Informático</label>
-                        <button class="btn btn-info btn-round btn-fab" data-toggle="modal" data-target="#informacionServicio">
+                        <button class="btn btn-info btn-round btn-fab" data-toggle="modal"
+                                data-target="#informacionServicio">
                             <i class="material-icons">info</i>
                         </button>
                         <button type="button" rel="tooltip" class="btn btn-success btn-round btn-fab"
                                 data-toggle="modal" data-target="#editarServicio">
                             <i class="material-icons">edit</i>
                         </button>
-                        <button type="button" rel="tooltip" class="btn btn-danger btn-round btn-fab" data-toggle="modal" data-target="#confirmacionBorrado">
+                        <button type="button" rel="tooltip" class="btn btn-danger btn-round btn-fab" data-toggle="modal"
+                                data-target="#confirmacionBorrado">
                             <i class="material-icons">delete</i>
                         </button>
                     </div>
