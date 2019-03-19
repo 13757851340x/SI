@@ -23,8 +23,9 @@ public class ServiceController {
     }
 
     @PostMapping
-    public void addService (@ModelAttribute Service service){
+    public ResponseEntity<?> addService (@ModelAttribute Service service){
         this.serviceRepository.save(service);
+        return ResponseEntity.noContent().build();
     }
 
     @PostMapping("/{id}/{user}")
