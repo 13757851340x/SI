@@ -1,11 +1,19 @@
 <h1><i>Autónomos network</i></h1>
+{{>userProfileModal}}
+{{>searchServiceModal}}
+{{>addServiceModal}}
+{{>editServiceModal}}
+{{>serviceInformationModal}}
+{{>confirmationModal}}
 <div class="form-group text-right dropdown">
     <button class="btn btn-primary btn-round dropdown-toggle" type="button" id="dropdownMenuButton"
             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <i class="material-icons">person</i> Jorge Javier Vázquez
     </button>
     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" href="#">Mi perfil</a>
+        <button class="dropdown-item" data-toggle="modal" data-target="#userProfileModal">
+            Mi perfil
+        </button>
         <div class="dropdown-divider"></div>
         <form action="/logout" method="post">
             <button type="submit" class="dropdown-item">Cerrar sesión</button>
@@ -26,11 +34,6 @@
     <li class="nav-item">
         <a class="nav-link" data-toggle="tab" href="#link3" role="tablist" aria-expanded="false">
             Listado de servicios
-        </a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" data-toggle="tab" href="#link4" role="tablist" aria-expanded="false">
-            Perfil de usuario
         </a>
     </li>
 </ul>
@@ -165,10 +168,7 @@
         </table>
     </div>
 
-    {{>addServiceModal}}
-    {{>editServiceModal}}
-    {{>serviceInformationModal}}
-    {{>confirmationModal}}
+
 
 
     <div class="tab-pane" id="link3" aria-expanded="false" style="margin-left: 5%">
@@ -178,18 +178,17 @@
                     <h4 class="card-title"><i class="material-icons">build</i>Servicios</h4>
                 </div>
                 <div class="card-body" style="margin-left: 10%">
-                    <ul class="nav">
-                        <li class="nav-item">
-                            <a class="nav-link disabled" href="#0">Ordenado por</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#0">Alfabeticamente</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#0">Beneficio</a>
-                        </li>
-                    </ul>
+
                     <div class="row">
+
+                        <div class="col-10">
+                            <button type="button" rel="tooltip" class="btn btn-primary btn-round"
+                                    data-toggle="modal"
+                                    data-target="#searchServiceModal">
+                                <i class="material-icons">search</i> busqueda servicio
+                            </button>
+                        </div>
+
                         <div class="col-10">
                             <form class="form-inline ml-auto">
 
@@ -247,48 +246,6 @@
                                 data-target="#confirmacionBorrado">
                             <i class="material-icons">delete</i>
                         </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
-    <div class="tab-pane" id="link4" aria-expanded="false">
-        <div class="container-fluid col-md-10">
-            <div class="card col-md-10">
-                <div class="card-header card-header-primary">
-                    <h4 class="card-title"><i class="material-icons">person</i>Mi perfil</h4>
-                </div>
-                <div class="card-body">
-                    <div class="form-group">
-                        <label>Usuario:</label>
-                        ...
-                    </div>
-                    <div class="form-group">
-                        <label>Nombre:</label>
-                        ...
-                    </div>
-                    <div class="form-group">
-                        <label>Contacto:</label>
-                        ...
-                        <button type="button" rel="tooltip" class="btn btn-success btn-round btn-fab ml-5">
-                            <i class="material-icons">edit</i>
-                        </button>
-                    </div>
-                    <div class="form-group">
-                        <label>Email:</label>
-                        ...
-                    </div>
-                    <div class="form-group">
-                        <label>Abilidades:</label>
-                        ...
-                        <button type="button" rel="tooltip" class="btn btn-success btn-round btn-fab ml-5">
-                            <i class="material-icons">add_circle</i>
-                        </button>
-                    </div>
-                    <div class="form-group">
-                        <label>Valoración del profesional:</label>
-                        ⭐⭐⭐⭐⭐
                     </div>
                 </div>
             </div>
