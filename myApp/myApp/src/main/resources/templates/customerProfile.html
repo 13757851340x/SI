@@ -1,7 +1,5 @@
 <h1><i>Autónomos network</i></h1>
 {{>userProfileModal}}
-{{>serviceSearch}}
-{{>userHistory}}
 <div class="form-group text-right dropdown">
     <button class="btn btn-primary btn-round dropdown-toggle" type="button" id="dropdownMenuButton"
             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -29,4 +27,7 @@
         </a>
     </li>
 </ul>
+<div class="tab-content tab-space">
+    {{>serviceSearch}}
+    {{>userHistory}}
 </div>
