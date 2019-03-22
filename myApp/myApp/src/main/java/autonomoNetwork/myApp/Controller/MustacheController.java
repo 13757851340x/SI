@@ -12,16 +12,29 @@ public class MustacheController {
         return "index";
     }
 
+    @GetMapping("/defaultSuccessUrl")
+    public String defaultSuccessUrl(){
+        return "defaultSuccessUrl";
+    }
+
     @GetMapping("/login")
     public String login(Model model) {
         model.addAttribute("isLogin", true);
         return "index";
     }
 
-    @GetMapping("/signUp")
-    public String signUp(Model model) {
-        model.addAttribute("isSignUp", true);
-        return "signUpModal";
+    @GetMapping("/professional")
+    public String professional (){
+        return "index";
     }
 
+    @GetMapping("/customer")
+    public String customer (){
+        return "index";
+    }
+
+    @GetMapping("/analyst")
+    public String analyst (){
+        return "index";
+    }
 }
