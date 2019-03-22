@@ -33,10 +33,10 @@ public class User {
     @Column(nullable = false)
     @NotNull
     private String city;
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     @ElementCollection
     private List<Request> requests;
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     @ElementCollection
     private List<Service> services;
 

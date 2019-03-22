@@ -6,7 +6,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
+
 
 @Entity
 @Data
@@ -32,6 +32,9 @@ public class Service {
     @OneToMany
     @ElementCollection
     private List<User> user;
+    @OneToMany(cascade = CascadeType.ALL)
+    @ElementCollection
+    private List<Request> requests;
 
     public Service(@NotNull String name, @NotNull String description, @NotNull String category, @NotNull int estimateTime, @NotNull double cost, List<User> user) {
         this.name = name;

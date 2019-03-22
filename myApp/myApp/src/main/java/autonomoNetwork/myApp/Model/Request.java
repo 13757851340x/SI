@@ -13,15 +13,14 @@ public class Request {
     @Id
     @GeneratedValue
     private Long id;
-    @ManyToOne
-    private Service service;
     @JoinColumn(nullable = false,name = "username")
     @NotNull
     @ManyToOne
     private User user;
-    @Column(nullable = false)
+    @JoinColumn(nullable = false)
     @NotNull
-    private String serviceRequested;
+    @ManyToOne
+    private Service serviceRequested;
     @Column(nullable = false)
     @NotNull
     private String serviceDate;
@@ -41,8 +40,7 @@ public class Request {
     @NotNull
     private String description;
 
-    public Request(@NotNull Service service, @NotNull User user, @NotNull String serviceRequested, @NotNull String serviceDate, @NotNull String requestDate, @NotNull String adress, @NotNull double benefit, @NotNull String state, @NotNull String description) {
-        this.service = service;
+    public Request(@NotNull User user, @NotNull Service serviceRequested, @NotNull String serviceDate, @NotNull String requestDate, @NotNull String adress, @NotNull double benefit, @NotNull String state, @NotNull String description) {
         this.user = user;
         this.serviceRequested = serviceRequested;
         this.serviceDate = serviceDate;
