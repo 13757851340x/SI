@@ -29,33 +29,41 @@ public class Service {
     @Column(nullable = false)
     @NotNull
     private double cost;
-    @OneToMany
-    @ElementCollection
+
+    @ManyToMany(cascade = CascadeType.ALL)
     private List<User> user;
-    @OneToMany(cascade = CascadeType.ALL)
-    @ElementCollection
+
+    @OneToMany(mappedBy = "serviceRequested", cascade = CascadeType.ALL)
     private List<Request> requests;
 
-    public Service(@NotNull String name, @NotNull String description, @NotNull String category, @NotNull int estimateTime, @NotNull double cost, List<User> user) {
+    public Service(@NotNull String name, @NotNull String description, @NotNull String category, @NotNull int estimateTime, @NotNull double cost) {
         this.name = name;
         this.description = description;
         this.category = category;
         this.estimateTime = estimateTime;
         this.cost = cost;
-        this.user = user;
     }
 
     public Service(){
 
     }
 
-    public void addUser(User user){
+    public void addUser(Professional user){
         if(this.user==null){
             this.user= new ArrayList<>();
         }
+        user.addService(this);
         this.user.add(user);
     }
     public void removeUser (User user){
         this.user.remove(user);
+    }
+
+    public void addRequest(Request request){
+        if(this.requests==null){
+            this.requests=new ArrayList<>();
+        }
+        request.addService(this);
+        this.requests.add(request);
     }
 }

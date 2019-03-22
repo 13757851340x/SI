@@ -40,9 +40,7 @@ public class Request {
     @NotNull
     private String description;
 
-    public Request(@NotNull User user, @NotNull Service serviceRequested, @NotNull String serviceDate, @NotNull String requestDate, @NotNull String adress, @NotNull double benefit, @NotNull String state, @NotNull String description) {
-        this.user = user;
-        this.serviceRequested = serviceRequested;
+    public Request(@NotNull String serviceDate, @NotNull String requestDate, @NotNull String adress, @NotNull double benefit, @NotNull String state, @NotNull String description) {
         this.serviceDate = serviceDate;
         this.requestDate = requestDate;
         this.adress = adress;
@@ -55,8 +53,13 @@ public class Request {
 
     }
 
-    public void addUser (User user){
+    public void addUser (Customer user){
+        user.addRequest(this);
         this.user=user;
+    }
+
+    public void addService (Service service){
+        this.serviceRequested=service;
     }
 
 

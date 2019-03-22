@@ -1,5 +1,6 @@
 package autonomoNetwork.myApp.Controller;
 
+import autonomoNetwork.myApp.Model.Customer;
 import autonomoNetwork.myApp.Model.Request;
 import autonomoNetwork.myApp.Model.Service;
 import autonomoNetwork.myApp.Model.User;
@@ -23,7 +24,7 @@ public class RequestController {
     }
 
     @PostMapping("/{id}")
-    public void addUser (@ModelAttribute User user, @PathVariable Long id){
+    public void addUser (@ModelAttribute Customer user, @PathVariable Long id){
         Request request = this.requestRepository.findById(id).orElseThrow(()-> new EntityNotFoundException(Service.class.getName()+"not found with id" + id));
         request.addUser(user);
         this.requestRepository.save(request);

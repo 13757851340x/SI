@@ -1,8 +1,9 @@
 package autonomoNetwork.myApp.Controller;
 
-import autonomoNetwork.myApp.Model.Request;
-import autonomoNetwork.myApp.Model.Service;
-import autonomoNetwork.myApp.Model.User;
+import autonomoNetwork.myApp.Model.*;
+import autonomoNetwork.myApp.Repository.AnalystRepository;
+import autonomoNetwork.myApp.Repository.CustomerRepository;
+import autonomoNetwork.myApp.Repository.ProfessionalRepository;
 import autonomoNetwork.myApp.Repository.UserRepository;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -16,6 +17,9 @@ import javax.validation.constraints.NotNull;
 @RequestMapping("user")
 public class UserController {
     private UserRepository userRepository;
+    private ProfessionalRepository professionalRepository;
+    private CustomerRepository customerRepository;
+    private AnalystRepository analystRepository;
     public UserController (UserRepository userRepository){
         this.userRepository=userRepository;
     }
@@ -27,13 +31,13 @@ public class UserController {
 
     @PostMapping("/{user_id}/{request_id}")
     public void addRequest (@ModelAttribute Request request, @PathVariable String user_id){
-        User user = this.userRepository.findById(user_id).orElseThrow(()-> new EntityNotFoundException(Service.class.getName()+"not found with id" + user_id));
+        Customer user = this.customerRepository.findById(user_id).orElseThrow(()-> new EntityNotFoundException(Service.class.getName()+"not found with id" + user_id));
         user.addRequest(request);
         this.userRepository.save(user);
     }
 
     @DeleteMapping("/{user}/{request}")
-    public ResponseEntity<?> removeRequest (@PathVariable User user, @PathVariable Request request){
+    public ResponseEntity<?> removeRequest (@PathVariable Customer user, @PathVariable Request request){
         user.removeRequest(request);
         this.userRepository.save(user);
         return ResponseEntity.noContent().build();
@@ -41,13 +45,13 @@ public class UserController {
 
     @PostMapping("/{user_id}/{service_id}")
     public void addService (@ModelAttribute Service service, @PathVariable String user_id){
-        User user = this.userRepository.findById(user_id).orElseThrow(()-> new EntityNotFoundException(Service.class.getName()+"not found with id" + user_id));
+        Professional user = this.professionalRepository.findById(user_id).orElseThrow(()-> new EntityNotFoundException(Service.class.getName()+"not found with id" + user_id));
         user.addService(service);
         this.userRepository.save(user);
     }
 
     @DeleteMapping("/{user}/{service}")
-    public ResponseEntity<?> removeService (@PathVariable User user, @PathVariable Service service){
+    public ResponseEntity<?> removeService (@PathVariable Professional user, @PathVariable Service service){
         user.removeService(service);
         this.userRepository.save(user);
         return ResponseEntity.noContent().build();
