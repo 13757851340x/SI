@@ -1,4 +1,5 @@
 <div class="tab-pane" id="link3" aria-expanded="false" style="margin-left: 5%">
+    {{#user}}
     <div class="container-fluid col-md-10">
         <div class="card col-md-10">
             <div class="card-header card-header-primary">
@@ -23,8 +24,10 @@
                         </form>
                     </div>
                 </div>
+                {{#services}}
                 <div>
-                    <label>Electricista</label>
+                    <label>{{name}}/</label>
+                    <label>{{category}}</label>
                     <button type="button" rel="tooltip" class="btn btn-info btn-round btn-fab" data-toggle="modal"
                             data-target="#informacionServicio">
                         <i class="material-icons">info</i>
@@ -38,37 +41,9 @@
                         <i class="material-icons">delete</i>
                     </button>
                 </div>
-                <div>
-                    <label>Fontanero</label>
-                    <button class="btn btn-info btn-round btn-fab" data-toggle="modal"
-                            data-target="#informacionServicio">
-                        <i class="material-icons">info</i>
-                    </button>
-                    <button type="button" rel="tooltip" class="btn btn-success btn-round btn-fab"
-                            data-toggle="modal" data-target="#editarServicio">
-                        <i class="material-icons">edit</i>
-                    </button>
-                    <button type="button" rel="tooltip" class="btn btn-danger btn-round btn-fab" data-toggle="modal"
-                            data-target="#confirmacionBorrado">
-                        <i class="material-icons">delete</i>
-                    </button>
-                </div>
-                <div>
-                    <label>Informático</label>
-                    <button class="btn btn-info btn-round btn-fab" data-toggle="modal"
-                            data-target="#informacionServicio">
-                        <i class="material-icons">info</i>
-                    </button>
-                    <button type="button" rel="tooltip" class="btn btn-success btn-round btn-fab"
-                            data-toggle="modal" data-target="#editarServicio">
-                        <i class="material-icons">edit</i>
-                    </button>
-                    <button type="button" rel="tooltip" class="btn btn-danger btn-round btn-fab" data-toggle="modal"
-                            data-target="#confirmacionBorrado">
-                        <i class="material-icons">delete</i>
-                    </button>
-                </div>
+                {{/services}}
             </div>
         </div>
     </div>
+    {{/user}}
 </div>

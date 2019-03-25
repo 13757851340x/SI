@@ -1,0 +1,35 @@
+<div class="tab-pane" id="link2" aria-expanded="false">
+    {{#user}}
+    <table class="table">
+        <thead>
+        <tr>
+            <th class="text-center"></th>
+            <th>Date-Time</th>
+            <th>Nombre cliente</th>
+            <th>Categoria</th>
+            <th>Lugar</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            {{#services}}
+            {{#requests}}
+            <td class="text-center">{{id}}</td>
+            <td>{{serviceDate}}</td>
+            <td>{{user.name}}</td>
+            <td>{{serviceRequested.category}}</td>
+            <td>{{adress}}</td>
+            <td class="td-actions text-right">
+                <button type="button" rel="tooltip" class="btn btn-success btn-round">
+                    aceptar
+                </button>
+                <button type="button" rel="tooltip" class="btn btn-danger btn-round">
+                    rechazar
+                </button>
+            </td>
+            {{/requests}}
+            {{/services}}
+        </tr>
+    </table>
+    {{/user}}
+</div>
