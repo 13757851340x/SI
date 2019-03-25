@@ -27,7 +27,7 @@ public class MyAppApplication {
             userRepository.deleteAll();
             Customer user1 = new Customer("customer", "pass", "name", "surname", "customer", "birthday", "city");
             Professional user2 = new Professional("professional", "pass", "name", "surname", "professional", "birthday", "city");
-            User user3 = new User("analyst", "pass", "name", "surname", "analyst", "birthday", "city");
+            Analyst user3 = new Analyst("analyst", "pass", "name", "surname", "analyst", "birthday", "city");
             user1 = userRepository.save(user1);
             user2 = userRepository.save(user2);
             user3 = userRepository.save(user3);
