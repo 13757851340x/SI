@@ -36,6 +36,7 @@
 
 <div class="tab-content tab-space">
     <div class="tab-pane active" id="link1" aria-expanded="true">
+        {{#analyst}}
         <table class="table">
             <thead>
             <tr>
@@ -47,10 +48,14 @@
             </thead>
             <tbody>
             <tr>
-                <td class="text-center">1</td>
-                <td>Arreglo de caldera</td>
-                <td>Andrés</td>
+                {{#services}}
 
+
+                <td class="text-center">{{id}}</td>
+                <td>{{serviceRequested.name}}</td>
+                <td>{{user.name}}</td>
+
+                {{/services}}
             </tr>
             <tr>
                 <td class="text-center">2</td>
@@ -65,6 +70,7 @@
             </tr>
             </tbody>
         </table>
+        {{/analyst}}
     </div>
     <div class="tab-pane" id="link2" aria-expanded="false">
         <table class="table">
