@@ -1,5 +1,4 @@
 <h1><i>Autónomos network</i></h1>
-{{>requestListModal}}
 <div class="form-group text-right dropdown">
     <button class="btn btn-primary btn-round dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <i class="material-icons">person</i> Jorge Javier Vázquez
@@ -36,7 +35,7 @@
 
 <div class="tab-content tab-space">
     <div class="tab-pane active" id="link1" aria-expanded="true">
-        {{#analyst}}
+        {{#user}}
         <table class="table">
             <thead>
             <tr>
@@ -49,28 +48,17 @@
             <tbody>
             <tr>
                 {{#services}}
-
-
+                {{#requests}}
                 <td class="text-center">{{id}}</td>
-                <td>{{serviceRequested.name}}</td>
+                <td>{{serviceDate}}</td>
                 <td>{{user.name}}</td>
-
+                {{/requests}}
                 {{/services}}
             </tr>
-            <tr>
-                <td class="text-center">2</td>
-                <td>Arreglo de enchufe</td>
-                <td>John</td>
-            </tr>
-            <tr>
-                <td class="text-center">3</td>
-                <td>Corte de pelo</td>
-                <td>Alex</td>
 
-            </tr>
             </tbody>
         </table>
-        {{/analyst}}
+        {{/user}}
     </div>
     <div class="tab-pane" id="link2" aria-expanded="false">
         <table class="table">
