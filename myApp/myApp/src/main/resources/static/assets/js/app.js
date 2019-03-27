@@ -26,5 +26,13 @@ $(document).ready(function () {
 
 function recuperarDato(element) {
     var name = $(element).data("name");
+    var category = $(element).data("category");
+    var estimateTime = $(element).data("estimate_time");
+    var cost = $(element).data("cost");
+    var description = $(element).data("description");
     $("#modal_name").val(name);
+    $("#modal_category").val(category);
+    $("#modal_estimateTime").val(estimateTime);
+    $("#modal_cost").val(cost);
+    $("#modal_description").val(description);
 }

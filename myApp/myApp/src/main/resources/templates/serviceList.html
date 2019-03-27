@@ -29,7 +29,12 @@
                     <label>{{name}}/</label>
                     <label>{{category}}</label>
                     <button type="button" rel="tooltip" class="btn btn-info btn-round btn-fab" data-toggle="modal"
-                            data-target="#informacionServicio">
+                            data-target="#informacionServicio" onclick="recuperarDato(this)"
+                            data-name={{name}}
+                            data-category={{category}}
+                            data-estimate_time={{estimateTime}}
+                            data-cost={{cost}}
+                            data-description={{description}}>
                         <i class="material-icons">info</i>
                     </button>
                     <button type="button" rel="tooltip" class="btn btn-success btn-round btn-fab"
@@ -37,13 +42,7 @@
                         <i class="material-icons">edit</i>
                     </button>
                     <button type="button" rel="tooltip" class="btn btn-danger btn-round btn-fab" data-toggle="modal"
-                            data-target="#confirmacionBorrado" onclick="recuperaraDato(this)"
-                            data-name={{name}}
-                            data-category={{category}}
-                            data-estimateTime={{estimateTime}}
-                            data-cost={{cost}}
-                            data-description={{description}}
-                    >
+                            data-target="#confirmacionBorrado">
                         <i class="material-icons">delete</i>
                     </button>
                 </div>
