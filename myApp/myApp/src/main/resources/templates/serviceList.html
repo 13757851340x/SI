@@ -37,7 +37,13 @@
                         <i class="material-icons">edit</i>
                     </button>
                     <button type="button" rel="tooltip" class="btn btn-danger btn-round btn-fab" data-toggle="modal"
-                            data-target="#confirmacionBorrado">
+                            data-target="#confirmacionBorrado" onclick="recuperaraDato(this)"
+                            data-name={{name}}
+                            data-category={{category}}
+                            data-estimateTime={{estimateTime}}
+                            data-cost={{cost}}
+                            data-description={{description}}
+                    >
                         <i class="material-icons">delete</i>
                     </button>
                 </div>

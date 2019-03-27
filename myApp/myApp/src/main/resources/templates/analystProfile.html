@@ -1,15 +1,20 @@
 <h1><i>Autónomos network</i></h1>
+{{>userProfileModal}}
 {{>requestListModal}}
 <div class="form-group text-right dropdown">
-    <button class="btn btn-primary btn-round dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <i class="material-icons">person</i> Jorge Javier Vázquez
+    <button class="btn btn-primary btn-round dropdown-toggle" type="button" id="dropdownMenuButton"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="material-icons">person</i> {{user.username}}
     </button>
     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" href="#">Mi perfil</a>
+        <button class="dropdown-item" data-toggle="modal" data-target="#userProfileModal">
+            Mi perfil
+        </button>
         <div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="#">Cerrar sesión</a>
+        <form action="/logout" method="post">
+            <button type="submit" class="dropdown-item">Cerrar sesión</button>
+        </form>
     </div>
-
 </div>
 <ul class="nav nav-pills nav-pills-primary" role="tablist">
     <li class="nav-item">

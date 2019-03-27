@@ -23,7 +23,7 @@
                                 id="exampleFormControlSelect2">
                             <option value="1">1</option>
                             <option value="2">2</option>
-                            <option value="3">3</option>
+                            <option value="3">3 </option>
                             <option value="4">4</option>
                             <option value="5">5</option>
                         </select>
@@ -35,17 +35,14 @@
                             <i class="material-icons" style="font-size: 22px">euro_symbol</i>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label for="exampleFormControlInput4"> Profesional: </label>
-                        <input type="text" name="user" class="form-control" id="exampleFormControlInput4">
-                    </div>
+                        <input type="hidden" name="professionals" value="{{user.username}}">
                     <div>
                         <label for="exampleFormControlTextarea1">Descripción: </label>
                         <textarea name="description" class="form-control" id="exampleFormControlTextarea1"
                                   rows="3"></textarea>
                     </div>
                     <td class="td-actions text-right">
-                        <button type="submit" class="btn btn-primary btn-round" onclick="">
+                        <button type="submit" class="btn btn-primary btn-round">
                             <!--data-toggle="modal"-->
                             <!--data-target="#confirmacionCambios"-->
                             Añadir

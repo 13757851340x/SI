@@ -11,12 +11,12 @@
         </tr>
         </thead>
         <tbody>
+        {{#services}}
+        {{#requests}}
         <tr>
-            {{#services}}
-            {{#requests}}
             <td class="text-center">{{id}}</td>
             <td>{{serviceDate}}</td>
-            <td>{{user.name}}</td>
+            <td>{{customer.name}}</td>
             <td>{{serviceRequested.category}}</td>
             <td>{{adress}}</td>
             <td class="td-actions text-right">
@@ -30,9 +30,9 @@
                     <i class="material-icons">delete</i>
                 </button>
             </td>
-            {{/requests}}
-            {{/services}}
         </tr>
+        {{/requests}}
+        {{/services}}
         </tbody>
     </table>
     {{/user}}
