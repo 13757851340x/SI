@@ -16,7 +16,7 @@ public class Request {
     @JoinColumn(nullable = false,name = "username")
     @NotNull
     @ManyToOne(cascade = CascadeType.DETACH)
-    private User user;
+    private Customer customer;
     @JoinColumn(nullable = false)
     @NotNull
     @ManyToOne(cascade = CascadeType.DETACH)
@@ -55,7 +55,7 @@ public class Request {
 
     public void addUser (Customer customer){
         customer.addRequest(this);
-        this.user=customer;
+        this.customer=customer;
     }
 
     public void addService (Service service){
