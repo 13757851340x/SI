@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.persistence.EntityNotFoundException;
+import java.util.List;
 
 @Controller
 @RequestMapping("service")
@@ -40,6 +41,18 @@ public class ServiceController {
         Service service = this.serviceRepository.findById(service_id).orElseThrow(()-> new EntityNotFoundException(Service.class.getName()+"not found with id" + service_id));
         service.addUser(user);
         this.serviceRepository.save(service);
+    }
+
+    @PostMapping("/{service_name}")
+    public int countService (@PathVariable Service service){
+        int contador=0;
+        List<Service> services = this.serviceRepository.findAll();
+        for(Service s: services){
+            if(s.getName().equals(service.getName())){
+                contador++;
+            }
+        }
+        return contador;
     }
 
     @DeleteMapping("/{user}/{service}")

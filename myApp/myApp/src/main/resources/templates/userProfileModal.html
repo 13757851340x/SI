@@ -1,4 +1,5 @@
 <div class="modal fade" id="userProfileModal" tabindex="-1" role="dialog" aria-hidden="true">
+    {{#user}}
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -10,33 +11,30 @@
             <div class="modal-body">
                 <div class="form-group">
                     <label>Nombre:</label>
-                    ...
+                    {{name}}
                 </div>
                 <div class="form-group">
                     <label>Email:</label>
-                    ...
+                    {{username}}
                 </div>
                 <div class="form-group">
-                    <label>Contacto:</label>
-                    ...
-                    <button type="button" rel="tooltip" class="btn btn-success btn-round">
-                        <i class="material-icons">edit</i>
-                    </button>
+                    <label>Fecha de nacimiento:</label>
+                    {{birthday}}
+                </div>
+                <div class="form-group">
+                    <label>Ciudad:</label>
+                    {{city}}
                 </div>
                 {{#isProfessional}}
                 <div class="form-group">
-                    <label>Abilidades:</label>
-                    ...
-                    <button type="button" rel="tooltip" class="btn btn-success btn-round btn-fab ml-5">
-                        <i class="material-icons">add_circle</i>
-                    </button>
-                </div>
-                <div class="form-group">
-                    <label>Valoración del profesional:</label>
-                    ⭐⭐⭐⭐⭐
+                    <label>Servicios ofrecidos:</label>
+                    {{#services}}
+                        {{name}}
+                    {{/services}}
                 </div>
                 {{/isProfessional}}
             </div>
         </div>
     </div>
+    {{/user}}
 </div>
