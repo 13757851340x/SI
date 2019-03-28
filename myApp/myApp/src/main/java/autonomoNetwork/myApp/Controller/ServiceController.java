@@ -35,7 +35,7 @@ public class ServiceController {
         return ResponseEntity.noContent().build();
     }
 
-    @PostMapping("/{id}/{user}")
+    @PostMapping("/{service_id}")
     public void addUser (@ModelAttribute Professional user, @PathVariable Long service_id){
         Service service = this.serviceRepository.findById(service_id).orElseThrow(()-> new EntityNotFoundException(Service.class.getName()+"not found with id" + service_id));
         service.addUser(user);
@@ -48,4 +48,5 @@ public class ServiceController {
         this.serviceRepository.save(service);
         return ResponseEntity.noContent().build();
     }
+
 }

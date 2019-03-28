@@ -36,3 +36,10 @@ function recuperarDato(element) {
     $("#modal_cost").val(cost);
     $("#modal_description").val(description);
 }
+
+function deleteService(user_id,service_id) {
+    $.ajax({
+        "url": "/" + user_id + "/" + service_id,
+        "method": "DELETE",
+    }).done(refreshPage);
+}
