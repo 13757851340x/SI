@@ -71,4 +71,8 @@ public class Service {
     public List<Professional> getProfessionals(){
         return this.professionals;
     }
+
+    public String getName(){
+        return this.name;
+    }
 }
