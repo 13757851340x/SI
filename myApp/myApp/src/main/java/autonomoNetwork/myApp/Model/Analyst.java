@@ -9,7 +9,7 @@ import java.util.List;
 
 @Entity
 public class Analyst extends User {
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany(cascade = CascadeType.DETACH)
     private List<Service> services;
 
     public Analyst(){

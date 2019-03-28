@@ -15,11 +15,11 @@ public class Request {
     private Long id;
     @JoinColumn(nullable = false,name = "username")
     @NotNull
-    @ManyToOne
-    private User user;
+    @ManyToOne(cascade = CascadeType.DETACH)
+    private Customer customer;
     @JoinColumn(nullable = false)
     @NotNull
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.DETACH)
     private Service serviceRequested;
     @Column(nullable = false)
     @NotNull
@@ -53,9 +53,9 @@ public class Request {
 
     }
 
-    public void addUser (Customer user){
-        user.addRequest(this);
-        this.user=user;
+    public void addUser (Customer customer){
+        customer.addRequest(this);
+        this.customer=customer;
     }
 
     public void addService (Service service){

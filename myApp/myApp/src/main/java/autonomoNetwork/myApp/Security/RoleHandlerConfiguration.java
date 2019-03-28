@@ -1,5 +1,7 @@
 package autonomoNetwork.myApp.Security;
 
+import autonomoNetwork.myApp.Service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
@@ -11,8 +13,8 @@ import javax.servlet.http.HttpServletResponse;
 
 @Configuration
 public class RoleHandlerConfiguration implements WebMvcConfigurer {
-    private static class RoleHandlerInterceptor extends HandlerInterceptorAdapter {
 
+    private static class RoleHandlerInterceptor extends HandlerInterceptorAdapter {
         @Override
         public void postHandle(final HttpServletRequest request,
                                final HttpServletResponse response, final Object handler,

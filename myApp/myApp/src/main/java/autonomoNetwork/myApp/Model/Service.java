@@ -30,8 +30,9 @@ public class Service {
     @NotNull
     private double cost;
 
-    @ManyToMany(cascade = CascadeType.ALL)
-    private List<User> user;
+    @ManyToMany(cascade = CascadeType.DETACH)
+    @JoinTable(name = "professional_service", joinColumns = @JoinColumn(name = "professionals"), inverseJoinColumns = @JoinColumn(name = "services"))
+    private List<Professional> professionals;
 
     @OneToMany(mappedBy = "serviceRequested", cascade = CascadeType.ALL)
     private List<Request> requests;
@@ -48,15 +49,15 @@ public class Service {
 
     }
 
-    public void addUser(Professional user){
-        if(this.user==null){
-            this.user= new ArrayList<>();
+    public void addUser(Professional professional){
+        if(this.professionals==null){
+            this.professionals= new ArrayList<>();
         }
-        user.addService(this);
-        this.user.add(user);
+        professional.addService(this);
+        this.professionals.add(professional);
     }
     public void removeUser (User user){
-        this.user.remove(user);
+        this.professionals.remove(user);
     }
 
     public void addRequest(Request request){
@@ -65,5 +66,9 @@ public class Service {
         }
         request.addService(this);
         this.requests.add(request);
+    }
+
+    public List<Professional> getProfessionals(){
+        return this.professionals;
     }
 }
