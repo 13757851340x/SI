@@ -43,8 +43,8 @@ public class ServiceController {
     }
 
     @DeleteMapping("/{user}/{service}")
-    public ResponseEntity<?> removeUser (@PathVariable User user, @PathVariable Service service){
-        service.removeUser(user);
+    public ResponseEntity<?> removeUser (@PathVariable Professional professional, @PathVariable Service service){
+        service.removeUser(professional);
         this.serviceRepository.save(service);
         return ResponseEntity.noContent().build();
     }

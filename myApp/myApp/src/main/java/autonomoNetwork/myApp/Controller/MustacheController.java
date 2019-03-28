@@ -2,7 +2,7 @@ package autonomoNetwork.myApp.Controller;
 
 import autonomoNetwork.myApp.Model.Analyst;
 import autonomoNetwork.myApp.Model.Customer;
-import autonomoNetwork.myApp.Model.Professional;
+import autonomoNetwork.myApp.Model.Service;
 import autonomoNetwork.myApp.Model.User;
 import autonomoNetwork.myApp.Repository.*;
 import autonomoNetwork.myApp.Service.UserService;
@@ -10,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+
+import java.util.List;
 
 
 @Controller
@@ -32,6 +34,7 @@ public class MustacheController {
     @GetMapping("/index")
     public String index (Model model){
         User user=userService.getCurrentUser();
+        List<Service> service= serviceRepository.findAll();
         if (user.getRole().equals("professional")){
             user = professionalRepository.findById(user.getUsername()).get();
             model.addAttribute("user",user);
@@ -42,6 +45,7 @@ public class MustacheController {
             user = analystRepository.findById(user.getUsername()).get();
             model.addAttribute("user",user);
         }
+        model.addAttribute("service",service);
         return "index";
     }
 
