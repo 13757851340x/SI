@@ -41,7 +41,7 @@
 
 <div class="tab-content tab-space">
     <div class="tab-pane active" id="link1" aria-expanded="true">
-        {{#analyst}}
+
         <table class="table">
             <thead>
             <tr>
@@ -53,29 +53,15 @@
             </thead>
             <tbody>
             <tr>
-                {{#services}}
-
-
+                {{#service}}
                 <td class="text-center">{{id}}</td>
-                <td>{{serviceRequested.name}}</td>
-                <td>{{user.name}}</td>
-
-                {{/services}}
-            </tr>
-            <tr>
-                <td class="text-center">2</td>
-                <td>Arreglo de enchufe</td>
-                <td>John</td>
-            </tr>
-            <tr>
-                <td class="text-center">3</td>
-                <td>Corte de pelo</td>
-                <td>Alex</td>
-
+                <td>{{name}}</td>
+                <td>{{#professionals}}{{name}}{{/professionals}}</td>
+                {{/service}}
             </tr>
             </tbody>
         </table>
-        {{/analyst}}
+
     </div>
     <div class="tab-pane" id="link2" aria-expanded="false">
         <table class="table">
@@ -89,40 +75,19 @@
             </thead>
             <tbody>
             <tr>
+                {{#service}}
                 <td class="text-center">1</td>
-                <td>Arreglo de caldera</td>
-                <td>Andrés</td>
-                <td>6</td>
+                <td>{{name}}</td>
+                <td> </td>
+                <td> </td>
+
 
                 <td class="td-actions text-right">
                     <button type="button" rel="tooltip" class="btn btn-primary btn-round">
                         consultar
                     </button>
                 </td>
-            </tr>
-            <tr>
-                <td class="text-center">2</td>
-                <td>Arreglo de enchufe</td>
-                <td>John</td>
-                <td>4</td>
-
-                <td class="td-actions text-right">
-                    <button type="button" rel="tooltip" class="btn btn-primary btn-round">
-                        consultar
-                    </button>
-                </td>
-            </tr>
-            <tr>
-                <td class="text-center">3</td>
-                <td>Corte de pelo</td>
-                <td>Alex</td>
-                <td>1</td>
-
-                <td class="td-actions text-right">
-                    <button type="button" rel="tooltip" class="btn btn-primary btn-simple btn-round">
-                        consultar
-                    </button>
-                </td>
+                {{/service}}
             </tr>
             </tbody>
         </table>
@@ -141,26 +106,13 @@
             </thead>
             <tbody>
             <tr>
+                {{#service}}
                 <td class="text-center">1</td>
-                <td>Arreglo de caldera</td>
-                <td>Andrés</td>
-                <td>6</td>
-                <td>228€</td>
-            </tr>
-            <tr>
-                <td class="text-center">2</td>
-                <td>Arreglo de enchufe</td>
-                <td>John</td>
-                <td>4</td>
-                <td>120€</td>
-
-            </tr>
-            <tr>
-                <td class="text-center">3</td>
-                <td>Corte de pelo</td>
-                <td>Alex</td>
-                <td>1</td>
-                <td>15€</td>
+                <td>{{name}}</td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                {{/service}}
             </tr>
             </tbody>
         </table>
