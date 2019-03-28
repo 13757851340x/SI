@@ -50,14 +50,17 @@
             </tr>
             </thead>
             <tbody>
+
             {{#service}}
+            {{#professionals}}
             <tr>
 
                 <td class="text-center">{{id}}</td>
                 <td>{{name}}</td>
-                <td>{{#professionals}}{{name}},{{/professionals}}</td>
+                <td>{{name}}</td>
 
             </tr>
+            {{/professionals}}
             {{/service}}
             </tbody>
         </table>
