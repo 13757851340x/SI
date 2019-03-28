@@ -31,7 +31,7 @@ public class Service {
     private double cost;
 
     @ManyToMany(cascade = CascadeType.DETACH)
-    @JoinTable(name = "professional_service", joinColumns = @JoinColumn(name = "professionals"), inverseJoinColumns = @JoinColumn(name = "services"))
+    @JoinTable(name = "professional_service", joinColumns = @JoinColumn(name = "services"), inverseJoinColumns = @JoinColumn(name = "professionals"))
     private List<Professional> professionals;
 
     @OneToMany(mappedBy = "serviceRequested", cascade = CascadeType.ALL)

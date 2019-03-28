@@ -1,6 +1,4 @@
 <h1><i>Autónomos network</i></h1>
-{{>userProfileModal}}
-{{>requestListModal}}
 <div class="form-group text-right dropdown">
     <button class="btn btn-primary btn-round dropdown-toggle" type="button" id="dropdownMenuButton"
             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -18,7 +16,7 @@
 </div>
 <ul class="nav nav-pills nav-pills-primary" role="tablist">
     <li class="nav-item">
-        <a class="nav-link active" data-toggle="tab" href="#link1" role="tablist" aria-expanded="true">
+        <a class="nav-link active" data-toggle="tab" href="#link1" role="tablist" aria-expanded="false">
             Servicios no demandados
         </a>
     </li>
@@ -40,7 +38,7 @@
 </ul>
 
 <div class="tab-content tab-space">
-    <div class="tab-pane active" id="link1" aria-expanded="true">
+    <div class="tab-pane active" id="link1" aria-expanded="false">
 
         <table class="table">
             <thead>
@@ -52,13 +50,15 @@
             </tr>
             </thead>
             <tbody>
+            {{#service}}
             <tr>
-                {{#service}}
+
                 <td class="text-center">{{id}}</td>
                 <td>{{name}}</td>
                 <td>{{#professionals}}{{name}},{{/professionals}}</td>
-                {{/service}}
+
             </tr>
+            {{/service}}
             </tbody>
         </table>
 
@@ -74,11 +74,12 @@
             </tr>
             </thead>
             <tbody>
+            {{#service}}
             <tr>
-                {{#service}}
+
                 <td class="text-center">1</td>
                 <td>{{name}}</td>
-                <td> </td>
+                <td>{{#professionals}}{{name}},{{/professionals}}</td>
                 <td> </td>
 
 
@@ -87,8 +88,9 @@
                         consultar
                     </button>
                 </td>
-                {{/service}}
+
             </tr>
+            {{/service}}
             </tbody>
         </table>
     </div>
@@ -105,15 +107,17 @@
             </tr>
             </thead>
             <tbody>
+            {{#service}}
             <tr>
-                {{#service}}
+
                 <td class="text-center">1</td>
                 <td>{{name}}</td>
-                <td> </td>
-                <td> </td>
-                <td> </td>
-                {{/service}}
+                <td>{{#professionals}}{{name}},{{/professionals}}</td>
+                <td></td>
+                <td></td>
+
             </tr>
+            {{/service}}
             </tbody>
         </table>
     </div>
@@ -128,41 +132,28 @@
             </tr>
             </thead>
             <tbody>
+            {{#service}}
+            {{#professionals}}
             <tr>
+
                 <td class="text-center">1</td>
-                <td>Andrés</td>
-                <td>4</td>
+                <td>{{name}}</td>
+                <td></td>
+
 
                 <td class="td-actions text-right">
                     <button type="button" rel="tooltip" class="btn btn-primary btn-simple btn-round" data-toggle="modal" data-target="#listaSolicitudes">
                         solicitudes
                     </button>
                 </td>
-            </tr>
-            <tr>
-                <td class="text-center" >2</td>
-                <td>John</td>
-                <td>2</td>
 
-                <td class="td-actions text-right">
-                    <button type="button" rel="tooltip" class="btn btn-primary btn-simple btn-round" data-toggle="modal" data-target="#listaSolicitudes">
-                        solicitudes
-                    </button>
-                </td>
             </tr>
-            <tr>
-                <td class="text-center">3</td>
-                <td>Alex</td>
-                <td>1</td>
-
-                <td class="td-actions text-right">
-                    <button type="button" rel="tooltip" class="btn btn-primary btn-simple btn-round" data-toggle="modal" data-target="#listaSolicitudes">
-                        solicitudes
-                    </button>
-                </td>
-            </tr>
+            {{/professionals}}
+            {{/service}}
             </tbody>
         </table>
 
     </div>
 </div>
+{{>userProfileModal}}
+{{>requestListModal}}

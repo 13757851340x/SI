@@ -8,7 +8,7 @@ import java.util.List;
 @Entity
 public class Professional extends User {
     @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "professional_service", joinColumns = @JoinColumn(name = "services"), inverseJoinColumns = @JoinColumn(name = "professionals"))
+    @JoinTable(name = "professional_service", joinColumns = @JoinColumn(name = "professionals"), inverseJoinColumns = @JoinColumn(name = "services"))
     private List<Service> services;
 
     public Professional (){

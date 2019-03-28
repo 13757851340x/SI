@@ -34,7 +34,7 @@ public class MustacheController {
     @GetMapping("/index")
     public String index (Model model){
         User user=userService.getCurrentUser();
-        List<Service> service= serviceRepository.findAll();
+        List<Service> service= serviceRepository.findAllByOrderByNameAsc();
         if (user.getRole().equals("professional")){
             user = professionalRepository.findById(user.getUsername()).get();
             model.addAttribute("user",user);
