@@ -1,0 +1,216 @@
+<h1><i>Autónomos network</i></h1>
+{{>userProfileModal}}
+{{>requestListModal}}
+<div class="form-group text-right dropdown">
+    <button class="btn btn-primary btn-round dropdown-toggle" type="button" id="dropdownMenuButton"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="material-icons">person</i> {{user.username}}
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <button class="dropdown-item" data-toggle="modal" data-target="#userProfileModal">
+            Mi perfil
+        </button>
+        <div class="dropdown-divider"></div>
+        <form action="/logout" method="post">
+            <button type="submit" class="dropdown-item">Cerrar sesión</button>
+        </form>
+    </div>
+</div>
+<ul class="nav nav-pills nav-pills-primary" role="tablist">
+    <li class="nav-item">
+        <a class="nav-link active" data-toggle="tab" href="#link1" role="tablist" aria-expanded="true">
+            Servicios no demandados
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#link2" role="tablist" aria-expanded="false">
+            Servicios más demandados
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#link3" role="tablist" aria-expanded="false">
+            Servicios con más ingresos
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#link4" role="tablist" aria-expanded="false">
+            Profesionales más demandados
+        </a>
+    </li>
+</ul>
+
+<div class="tab-content tab-space">
+    <div class="tab-pane active" id="link1" aria-expanded="true">
+        {{#analyst}}
+        <table class="table">
+            <thead>
+            <tr>
+                <th class="text-center"></th>
+                <th>Nombre del servicio</th>
+                <th>Nombre del profesional</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                {{#services}}
+
+
+                <td class="text-center">{{id}}</td>
+                <td>{{serviceRequested.name}}</td>
+                <td>{{user.name}}</td>
+
+                {{/services}}
+            </tr>
+            <tr>
+                <td class="text-center">2</td>
+                <td>Arreglo de enchufe</td>
+                <td>John</td>
+            </tr>
+            <tr>
+                <td class="text-center">3</td>
+                <td>Corte de pelo</td>
+                <td>Alex</td>
+
+            </tr>
+            </tbody>
+        </table>
+        {{/analyst}}
+    </div>
+    <div class="tab-pane" id="link2" aria-expanded="false">
+        <table class="table">
+            <thead>
+            <tr>
+                <th class="text-center"></th>
+                <th>Nombre del servicio</th>
+                <th>Nombre del profesional</th>
+                <th>Veces solicitado</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td class="text-center">1</td>
+                <td>Arreglo de caldera</td>
+                <td>Andrés</td>
+                <td>6</td>
+
+                <td class="td-actions text-right">
+                    <button type="button" rel="tooltip" class="btn btn-primary btn-round">
+                        consultar
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td class="text-center">2</td>
+                <td>Arreglo de enchufe</td>
+                <td>John</td>
+                <td>4</td>
+
+                <td class="td-actions text-right">
+                    <button type="button" rel="tooltip" class="btn btn-primary btn-round">
+                        consultar
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td class="text-center">3</td>
+                <td>Corte de pelo</td>
+                <td>Alex</td>
+                <td>1</td>
+
+                <td class="td-actions text-right">
+                    <button type="button" rel="tooltip" class="btn btn-primary btn-simple btn-round">
+                        consultar
+                    </button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="tab-pane" id="link3" aria-expanded="false">
+        <table class="table">
+            <thead>
+            <tr>
+                <th class="text-center"></th>
+                <th>Nombre del servicio</th>
+                <th>Nombre del profesional</th>
+                <th>Solicitudes completadas</th>
+                <th>Beneficio total</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td class="text-center">1</td>
+                <td>Arreglo de caldera</td>
+                <td>Andrés</td>
+                <td>6</td>
+                <td>228€</td>
+            </tr>
+            <tr>
+                <td class="text-center">2</td>
+                <td>Arreglo de enchufe</td>
+                <td>John</td>
+                <td>4</td>
+                <td>120€</td>
+
+            </tr>
+            <tr>
+                <td class="text-center">3</td>
+                <td>Corte de pelo</td>
+                <td>Alex</td>
+                <td>1</td>
+                <td>15€</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="tab-pane" id="link4" aria-expanded="false">
+        <table class="table">
+            <thead>
+            <tr>
+                <th class="text-center"></th>
+                <th>Nombre del profesional</th>
+                <th>Servicios solicitados</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td class="text-center">1</td>
+                <td>Andrés</td>
+                <td>4</td>
+
+                <td class="td-actions text-right">
+                    <button type="button" rel="tooltip" class="btn btn-primary btn-simple btn-round" data-toggle="modal" data-target="#listaSolicitudes">
+                        solicitudes
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td class="text-center" >2</td>
+                <td>John</td>
+                <td>2</td>
+
+                <td class="td-actions text-right">
+                    <button type="button" rel="tooltip" class="btn btn-primary btn-simple btn-round" data-toggle="modal" data-target="#listaSolicitudes">
+                        solicitudes
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td class="text-center">3</td>
+                <td>Alex</td>
+                <td>1</td>
+
+                <td class="td-actions text-right">
+                    <button type="button" rel="tooltip" class="btn btn-primary btn-simple btn-round" data-toggle="modal" data-target="#listaSolicitudes">
+                        solicitudes
+                    </button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>
