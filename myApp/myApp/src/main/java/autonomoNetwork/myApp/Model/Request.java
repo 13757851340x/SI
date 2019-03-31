@@ -13,10 +13,12 @@ public class Request {
     @Id
     @GeneratedValue
     private Long id;
-    @JoinColumn(nullable = false,name = "username")
+    @JoinColumn(nullable = false)
     @NotNull
     @ManyToOne(cascade = CascadeType.DETACH)
     private Customer customer;
+
+    private String professional;
     @JoinColumn(nullable = false)
     @NotNull
     @ManyToOne(cascade = CascadeType.DETACH)
@@ -35,12 +37,12 @@ public class Request {
     private double benefit;
     @Column(nullable = false)
     @NotNull
-    private String state;
+    private boolean state;
     @Column(nullable = false)
     @NotNull
     private String description;
 
-    public Request(@NotNull String serviceDate, @NotNull String requestDate, @NotNull String adress, @NotNull double benefit, @NotNull String state, @NotNull String description) {
+    public Request(@NotNull String serviceDate, @NotNull String requestDate, @NotNull String adress, @NotNull double benefit, @NotNull boolean state, @NotNull String description) {
         this.serviceDate = serviceDate;
         this.requestDate = requestDate;
         this.adress = adress;
@@ -53,14 +55,22 @@ public class Request {
 
     }
 
-    public void addUser (Customer customer){
+    public void addCustomer(Customer customer){
         customer.addRequest(this);
         this.customer=customer;
     }
+
+    public void addProfessional(String professional){
+        this.professional=professional;
+    }
+
 
     public void addService (Service service){
         this.serviceRequested=service;
     }
 
+    public void setState(){
+        this.state=true;
+    }
 
 }

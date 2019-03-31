@@ -42,9 +42,9 @@
             </label>
         </div>
         <div class="col-5 mx-5">
-            <form class="form-inline ml-auto">
+            <form class="form-inline ml-auto ignore" action="/findByServiceName" method="get">
                 <div class="form-group no-border">
-                    <input type="text" class="form-control" placeholder="Search" value="Madrid">
+                    <input type="text"  name="name" class="form-control" placeholder="Search">
                 </div>
                 <button type="submit" class="btn btn-just-icon btn-round">
                     <i class="material-icons">search</i>
@@ -68,10 +68,10 @@
         <tr>
             <td class="text-center">1</td>
             <td>
-                {{service}}
+                {{serviceName}}
                 <button type="button" rel="tooltip" class="btn btn-info btn-round btn-fab" data-toggle="modal"
                         data-target="#informacionServicio" onclick="serviceData(this)"
-                        data-name="{{service}}"
+                        data-name="{{serviceName}}"
                         data-category="{{category}}"
                         data-estimate_time="{{estimateTime}}"
                         data-cost="{{cost}}"
@@ -95,7 +95,11 @@
             <td>{{citys}}</td>
             <td>
                 <button class="btn btn-success btn-round" data-toggle="modal"
-                        data-target="#solicitud">Solicitar servicio</button>
+                        data-target="#solicitud"
+                        onclick="requestTime(this);serviceData(this)"
+                        data-id = "{{id}}"
+                        data-usernaxme ="{{username}}"
+                        data-cost="{{cost}}">Solicitar servicio</button>
             </td>
         </tr>
         {{/professionals}}

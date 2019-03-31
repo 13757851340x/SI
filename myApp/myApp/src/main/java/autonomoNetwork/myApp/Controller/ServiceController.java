@@ -1,10 +1,13 @@
 package autonomoNetwork.myApp.Controller;
 
 import autonomoNetwork.myApp.Model.Professional;
+import autonomoNetwork.myApp.Model.Request;
 import autonomoNetwork.myApp.Model.Service;
 import autonomoNetwork.myApp.Model.User;
+import autonomoNetwork.myApp.Repository.RequestRepository;
 import autonomoNetwork.myApp.Repository.ServiceRepository;
 import autonomoNetwork.myApp.Repository.UserRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -15,11 +18,11 @@ import java.util.List;
 @Controller
 @RequestMapping("service")
 public class ServiceController {
-    private UserRepository userRepository;
+    private RequestRepository requestRepository;
     private ServiceRepository serviceRepository;
-    public ServiceController(ServiceRepository serviceRepository,UserRepository userRepository){
+    public ServiceController(ServiceRepository serviceRepository,RequestRepository requestRepository){
         this.serviceRepository=serviceRepository;
-        this.userRepository=userRepository;
+        this.requestRepository=requestRepository;
     }
 
     @GetMapping("/{id}")
@@ -43,23 +46,21 @@ public class ServiceController {
         this.serviceRepository.save(service);
     }
 
-    @PostMapping("/{service_name}")
-    public int countService (@PathVariable Service service){
-        int contador=0;
-        List<Service> services = this.serviceRepository.findAll();
-        for(Service s: services){
-            if(s.getName().equals(service.getName())){
-                contador++;
-            }
-        }
-        return contador;
-    }
 
-    @DeleteMapping("/{user}/{service}")
+    @DeleteMapping("/user/{professional}/{service}")
     public ResponseEntity<?> removeUser (@PathVariable Professional professional, @PathVariable Service service){
         service.removeUser(professional);
         this.serviceRepository.save(service);
         return ResponseEntity.noContent().build();
     }
+
+    @DeleteMapping("/request/{request}/{service}")
+    public ResponseEntity<?> removeRequest (@PathVariable Request request, @PathVariable Service service){
+        service.removeRequest(request);
+        this.requestRepository.delete(request);
+        this.serviceRepository.save(service);
+        return ResponseEntity.noContent().build();
+    }
+
 
 }

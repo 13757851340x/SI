@@ -30,7 +30,7 @@
                     <label>{{category}}</label>
                     <button type="button" rel="tooltip" class="btn btn-info btn-round btn-fab" data-toggle="modal"
                             data-target="#informacionServicio" onclick="serviceData(this)"
-                            data-name="{{service}}"
+                            data-name="{{serviceName}}"
                             data-category="{{category}}"
                             data-estimate_time="{{estimateTime}}"
                             data-cost="{{cost}}"
@@ -41,7 +41,7 @@
                             data-toggle="modal" data-target="#editarServicio">
                         <i class="material-icons">edit</i>
                     </button>
-                    <button type="button" rel="tooltip" class="btn btn-danger btn-round btn-fab"  onclick="deleteService('{{username}}',{{id}})">
+                    <button type="button" rel="tooltip" class="btn btn-danger btn-round btn-fab"  onclick="deleteService('{{user.username}}',{{id}})">
                         <!--data-toggle="modal"-->
                         <!--data-target="#confirmacionBorrado"-->
                         <i class="material-icons">delete</i>

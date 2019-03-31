@@ -8,11 +8,11 @@
                 {{#user}}
                 {{#requests}}
                 <div class="solicitud ml-5">
-                    <label>{{serviceRequested.service}}</label>
+                    <label>{{serviceRequested.serviceName}}</label>
                     <button type="button" rel="tooltip" class="btn btn-info btn-round btn-fab" data-toggle="modal"
                             data-target="#informacionServicio"
                             onclick="serviceData(this)"
-                            data-name="{{serviceRequested.service}}"
+                            data-name="{{serviceRequested.serviceName}}"
                             data-category="{{serviceRequested.category}}"
                             data-estimate_time="{{serviceRequested.estimateTime}}"
                             data-cost="{{serviceRequested.cost}}"

@@ -16,7 +16,7 @@ public class Service {
     private Long id;
     @Column(nullable = false)
     @NotNull
-    private String service;
+    private String serviceName;
     @Column(nullable = false)
     @NotNull
     private String description;
@@ -40,8 +40,8 @@ public class Service {
     @OneToMany(mappedBy = "serviceRequested", cascade = CascadeType.ALL)
     private List<Request> requests;
 
-    public Service(@NotNull String service, @NotNull String description, @NotNull String category, @NotNull int estimateTime, @NotNull double cost) {
-        this.service = service;
+    public Service(@NotNull String serviceName, @NotNull String description, @NotNull String category, @NotNull int estimateTime, @NotNull double cost) {
+        this.serviceName = serviceName;
         this.description = description;
         this.category = category;
         this.estimateTime = estimateTime;
@@ -71,6 +71,10 @@ public class Service {
         this.requests.add(request);
     }
 
+    public void removeRequest(Request request){
+        this.requests.remove(request);
+    }
+
     public List<Professional> getProfessionals(){
         return this.professionals;
     }
@@ -82,7 +86,4 @@ public class Service {
         this.citys.add(city);
     }
 
-    public String getName(){
-        return this.service;
-    }
 }

@@ -12,7 +12,9 @@
         </thead>
         <tbody>
         {{#services}}
+        <Input type="hidden" class="serviceId" id="serviceId" value="{{id}}">
         {{#requests}}
+        {{^state}}
         <tr>
             <td class="text-center">{{id}}</td>
             <td>{{serviceDate}}</td>
@@ -20,14 +22,15 @@
             <td>{{serviceRequested.category}}</td>
             <td>{{adress}}</td>
             <td class="td-actions text-right">
-                <button type="button" rel="tooltip" class="btn btn-success btn-round">
+                <button type="button" rel="tooltip" class="btn btn-success btn-round" onclick="acceptRequest({{id}})">
                     aceptar
                 </button>
-                <button type="button" rel="tooltip" class="btn btn-danger btn-round">
+                <button type="button" rel="tooltip" class="btn btn-danger btn-round" onclick="removeRequest({{id}},this)">
                     rechazar
                 </button>
             </td>
         </tr>
+        {{/state}}
         {{/requests}}
         {{/services}}
     </table>

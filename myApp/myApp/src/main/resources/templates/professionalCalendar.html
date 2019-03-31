@@ -13,6 +13,7 @@
         <tbody>
         {{#services}}
         {{#requests}}
+        {{#state}}
         <tr>
             <td class="text-center">{{id}}</td>
             <td>{{serviceDate}}</td>
@@ -31,6 +32,7 @@
                 </button>
             </td>
         </tr>
+        {{/state}}
         {{/requests}}
         {{/services}}
         </tbody>
