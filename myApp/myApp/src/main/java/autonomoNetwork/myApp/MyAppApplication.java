@@ -47,16 +47,20 @@ public class MyAppApplication {
             user4.addService(service);
             userRepository.save(user2);
             userRepository.save(user4);
-            serviceRepository.save(service);
+            service = serviceRepository.save(service);
             serviceRepository.save(service2);
             Request request1 = new Request("23/07-17:00", "21/07", "C/Tulipan", 30.50, "aceptado", "descrption");
             request1.addUser(user1);
             request1.addService(service);
+            request1 = requestRepository.save(request1);
+            user1.addRequest(request1);
+            userRepository.save(user1);
             Request request2= new Request("12/03-12:00", "11/05", "C/san", 30.50, "no", "descrption");
             request2.addUser(user1);
             request2.addService(service);
-            requestRepository.save(request1);
             requestRepository.save(request2);
+            user1.addRequest(request2);
+            userRepository.save(user1);
         };
     }
 }

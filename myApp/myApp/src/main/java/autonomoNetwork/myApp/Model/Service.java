@@ -16,7 +16,7 @@ public class Service {
     private Long id;
     @Column(nullable = false)
     @NotNull
-    private String name;
+    private String service;
     @Column(nullable = false)
     @NotNull
     private String description;
@@ -31,7 +31,7 @@ public class Service {
     private double cost;
     @Column(nullable = false)
     @ElementCollection
-    private List<String> city;
+    private List<String> citys;
 
     @ManyToMany(cascade = CascadeType.DETACH)
     @JoinTable(name = "professional_service", joinColumns = @JoinColumn(name = "services"), inverseJoinColumns = @JoinColumn(name = "professionals"))
@@ -40,8 +40,8 @@ public class Service {
     @OneToMany(mappedBy = "serviceRequested", cascade = CascadeType.ALL)
     private List<Request> requests;
 
-    public Service(@NotNull String name, @NotNull String description, @NotNull String category, @NotNull int estimateTime, @NotNull double cost) {
-        this.name = name;
+    public Service(@NotNull String service, @NotNull String description, @NotNull String category, @NotNull int estimateTime, @NotNull double cost) {
+        this.service = service;
         this.description = description;
         this.category = category;
         this.estimateTime = estimateTime;
@@ -76,13 +76,13 @@ public class Service {
     }
 
     public void addCity(String city){
-        if(this.city==null){
-            this.city=new ArrayList<>();
+        if(this.citys==null){
+            this.citys=new ArrayList<>();
         }
-        this.city.add(city);
+        this.citys.add(city);
     }
 
     public String getName(){
-        return this.name;
+        return this.service;
     }
 }

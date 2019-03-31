@@ -9,7 +9,7 @@ import java.util.List;
 
 @Entity
 public class Customer extends  User {
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL,mappedBy = "customer")
     private List<Request> requests;
 
     public Customer(){

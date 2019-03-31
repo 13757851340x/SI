@@ -37,7 +37,7 @@ function serviceData(element) {
     $("#modal_description").val(description);
 }
 
-function professionalata(element) {
+function professionalData(element) {
     var name = $(element).data("name");
     var username = $(element).data("username");
     var birthday = $(element).data("birthday");
