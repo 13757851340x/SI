@@ -63,167 +63,35 @@
         </tr>
         </thead>
         <tbody>
+        {{#service}}
         <tr>
             <td class="text-center">1</td>
             <td>
-                ............
+                {{name}}
                 <button type="button" rel="tooltip" class="btn btn-info btn-round btn-fab">
                     <i class="material-icons">info</i>
                 </button>
             </td>
             <td>
-                Electricidad
+                {{category}}
             </td>
             <td>Andrés
                 <button type="button" rel="tooltip" class="btn btn-info btn-round btn-fab" data-toggle="modal"
-                        data-target="#infoProfesional">
+                        data-target="#infoProfesional" onclick="professionalData(this)"
+                        data-name="name"
+                        data-username="username"
+                        data-birthday="birthday"
+                        data-city="city">
                     <i class="material-icons">info</i>
                 </button>
             </td>
-            <td>Madrid</td>
+            <td>{{city}}</td>
             <td><button class="btn btn-success btn-round" data-toggle="modal"
                         data-target="#solicitud">Solicitar servicio</button></td>
         </tr>
-        <tr>
-            <td class="text-center">2</td>
-            <td>
-                ............
-                <button type="button" rel="tooltip" class="btn btn-info btn-round btn-fab">
-                    <i class="material-icons">info</i>
-                </button>
-            </td>
-            <td>
-                Fontaneria
-            </td>
-            <td>Rubén
-                <button type="button" rel="tooltip" class="btn btn-info btn-round btn-fab" data-toggle="modal"
-                        data-target="#infoProfesional">
-                    <i class="material-icons">info</i>
-                </button>
-            </td>
-            <td>Madrid</td>
-            <td><button class="btn btn-success btn-round" data-toggle="modal"
-                        data-target="#solicitud">Solicitar servicio</button></td>
-        </tr>
-        <tr>
-            <td class="text-center">3</td>
-            <td>
-                .........
-                <button type="button" rel="tooltip" class="btn btn-info btn-round btn-fab">
-                    <i class="material-icons">info</i>
-                </button>
-            </td>
-            <td>
-                Informatica
-            </td>
-            <td>Alex
-                <button type="button" rel="tooltip" class="btn btn-info btn-round btn-fab " data-toggle="modal"
-                        data-target="#infoProfesional">
-                    <i class="material-icons">info</i>
-                </button>
-            </td>
-            <td>Madrid</td>
-            <td><button class="btn btn-success btn-round" data-toggle="modal"
-                        data-target="#solicitud">Solicitar servicio</button></td>
-        </tr>
+        {{/service}}
         </tbody>
     </table>
-    <div class="modal fade" id="infoProfesional" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Información profesional</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="perfilProfesional">
-                        <div class="form-group">
-                            <label>Usuario:</label>
-                            ..............
-                        </div>
-                        <div class="form-group">
-                            <label>Nombre:</label>
-                            ..............
-                        </div>
-                        <div class="form-group">
-                            <label>Contacto:</label>
-                            ..............
-                        </div>
-                        <div class="form-group">
-                            <label>Email:</label>
-                            ...................
-                        </div>
-                        <div class="form-group">
-                            <label>Abilidades:</label>
-                            ................
-                        </div>
-                        <div class="form-group">
-                            <label>Descripción general:</label>
-                            .....................
-                        </div>
-                        <div class="form-group">
-                            <label>Valoración del profesional:</label>
-                            ⭐⭐⭐⭐⭐
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="solicitud" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Solicitud de servicio</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="form-group">
-                            <label for="exampleFormControlInput1">Address</label>
-                            <input type="email" class="form-control" id="exampleFormControlInput1">
-                        </div>
-                    </form>
-                    <div class="form-group row">
-                        <div class="select-mounth col-4">
-                            <label >Mounth</label>
-                            <select class="form-control selectpicker" data-style="btn btn-link">
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>................</option>
-                            </select>
-                        </div>
-                        <div class="select-day col-4">
-                            <label >Day</label>
-                            <select class="form-control selectpicker" data-style="btn btn-link">
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>...............................</option>
-                            </select>
-                        </div>
-                        <div class="select-time col-4">
-                            <label >Time</label>
-                            <select class="form-control selectpicker" data-style="btn btn-link">
-                                <option>9:00</option>
-                                <option>10:00</option>
-                                <option>11:00</option>
-                                <option>...............................</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar
-                    </button>
-                    <button type="button" class="btn btn-success">Solicitar</button>
-                </div>
-            </div>
-        </div>
-    </div>
+    {{>professionalInfoModal}}
+    {{>requestServiceModal}}
 </div>

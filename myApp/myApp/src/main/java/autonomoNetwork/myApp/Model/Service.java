@@ -29,6 +29,9 @@ public class Service {
     @Column(nullable = false)
     @NotNull
     private double cost;
+    @Column(nullable = false)
+    @ElementCollection
+    private List<String> city;
 
     @ManyToMany(cascade = CascadeType.DETACH)
     @JoinTable(name = "professional_service", joinColumns = @JoinColumn(name = "services"), inverseJoinColumns = @JoinColumn(name = "professionals"))
@@ -70,6 +73,13 @@ public class Service {
 
     public List<Professional> getProfessionals(){
         return this.professionals;
+    }
+
+    public void addCity(String city){
+        if(this.city==null){
+            this.city=new ArrayList<>();
+        }
+        this.city.add(city);
     }
 
     public String getName(){

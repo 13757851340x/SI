@@ -37,9 +37,11 @@ public class MyAppApplication {
             Service service2 = new Service("afeitado", "efectivo y rápido", "peluquería", 3, 23.30);
             serviceRepository.save(service);
             serviceRepository.save(service2);
-            service2.addUser(user2);
             service.addUser(user2);
             service.addUser(user4);
+            service.addCity("Mostoles");
+            service.addCity("Fuenlabrada");
+            service2.addUser(user2);
             user2.addService(service2);
             user2.addService(service);
             user4.addService(service);

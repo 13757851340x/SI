@@ -24,7 +24,7 @@ $(document).ready(function () {
     });
 });
 
-function recuperarDato(element) {
+function serviceData(element) {
     var name = $(element).data("name");
     var category = $(element).data("category");
     var estimateTime = $(element).data("estimate_time");
@@ -35,6 +35,17 @@ function recuperarDato(element) {
     $("#modal_estimateTime").val(estimateTime);
     $("#modal_cost").val(cost);
     $("#modal_description").val(description);
+}
+
+function professionalata(element) {
+    var name = $(element).data("name");
+    var username = $(element).data("username");
+    var birthday = $(element).data("birthday");
+    var city = $(element).data("city");
+    $("#modal_name").val(name);
+    $("#modal_username").val(username);
+    $("#modal_birthday").val(birthday);
+    $("#modal_city").val(city);
 }
 
 function deleteService(user_id,service_id) {
