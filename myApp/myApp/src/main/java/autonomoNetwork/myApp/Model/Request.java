@@ -65,12 +65,18 @@ public class Request {
     }
 
 
-    public void addService (Service service){
+    public Service addService (Service service){
+        service.setFrequency(service.getFrequency()+1);
         this.serviceRequested=service;
+        return service;
     }
 
     public void setState(){
         this.state=true;
+    }
+
+    public Service getServiceRequested(){
+        return this.serviceRequested;
     }
 
 }

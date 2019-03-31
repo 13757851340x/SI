@@ -32,6 +32,10 @@ public class Service {
     @Column(nullable = false)
     @ElementCollection
     private List<String> citys;
+    private int frequency;
+    public boolean completed;
+    public int requestCompleted;
+    public double totalBenefit;
 
     @ManyToMany(cascade = CascadeType.DETACH)
     @JoinTable(name = "professional_service", joinColumns = @JoinColumn(name = "services"), inverseJoinColumns = @JoinColumn(name = "professionals"))
@@ -40,12 +44,16 @@ public class Service {
     @OneToMany(mappedBy = "serviceRequested", cascade = CascadeType.ALL)
     private List<Request> requests;
 
-    public Service(@NotNull String serviceName, @NotNull String description, @NotNull String category, @NotNull int estimateTime, @NotNull double cost) {
+    public Service(@NotNull String serviceName, @NotNull String description, @NotNull String category, @NotNull int estimateTime, @NotNull double cost,int frequency,boolean completed,int requestCompleted,int totalBenefit) {
         this.serviceName = serviceName;
         this.description = description;
         this.category = category;
         this.estimateTime = estimateTime;
         this.cost = cost;
+        this.frequency=frequency;
+        this.completed=completed;
+        this.requestCompleted=requestCompleted;
+        this.totalBenefit=totalBenefit;
     }
 
     public Service(){
@@ -86,4 +94,11 @@ public class Service {
         this.citys.add(city);
     }
 
+    public int getFrequency(){
+        return this.frequency;
+    }
+
+    public void setFrequency(int frequency){
+        this.frequency=frequency;
+    }
 }

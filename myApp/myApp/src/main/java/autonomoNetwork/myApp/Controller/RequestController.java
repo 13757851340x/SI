@@ -42,6 +42,8 @@ public class RequestController {
     @PostMapping("/request/{request}")
     public ResponseEntity<?>  acceptRequest(@PathVariable Request request){
         request.setState();
+        Service service=request.getServiceRequested();
+        service.setFrequency(service.getFrequency()+1);
         requestRepository.save(request);
         return ResponseEntity.noContent().build();
     }

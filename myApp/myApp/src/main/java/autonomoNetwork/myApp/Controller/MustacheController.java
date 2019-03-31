@@ -35,7 +35,8 @@ public class MustacheController {
     @GetMapping("/index")
     public String index (Model model){
         User user=userService.getCurrentUser();
-        List<Service> service= serviceRepository.findAll();
+        List<Service> serviceOrderbyFrequency= serviceRepository.findAllByOrderByFrequencyDesc();
+        List<Service> noDemandedService = serviceRepository.findByFrequency(0);
         if (user.getRole().equals("professional")){
             user = professionalRepository.findById(user.getUsername()).get();
             model.addAttribute("user",user);
@@ -46,7 +47,8 @@ public class MustacheController {
             user = analystRepository.findById(user.getUsername()).get();
             model.addAttribute("user",user);
         }
-        model.addAttribute("service",service);
+        model.addAttribute("serviceOBF",serviceOrderbyFrequency);
+        model.addAttribute("noDemanded",noDemandedService);
         return "index";
     }
 
@@ -75,9 +77,4 @@ public class MustacheController {
         return this.index(model);
     }
 
-    @GetMapping("/findByServiceName")
-    public String findByServiceName(Model model, @RequestParam String name){
-        List<Service> services = this.serviceRepository.findByServiceName(name);
-        return this.index(model);
-    }
 }

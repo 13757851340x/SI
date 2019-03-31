@@ -1,0 +1,26 @@
+<div class="tab-pane" id="link3" aria-expanded="false">
+    <table class="table">
+        <thead>
+        <tr>
+            <th class="text-center"></th>
+            <th>Nombre del servicio</th>
+            <th>Nombre del profesional</th>
+            <th>Solicitudes completadas</th>
+            <th>Beneficio total</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#service}}
+        <tr>
+
+            <td class="text-center">1</td>
+            <td>{{serviceName}}</td>
+            <td>{{#professionals}}{{name}},{{/professionals}}</td>
+            <td></td>
+            <td></td>
+
+        </tr>
+        {{/service}}
+        </tbody>
+    </table>
+</div>

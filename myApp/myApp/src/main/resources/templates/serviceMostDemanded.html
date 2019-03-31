@@ -1,0 +1,27 @@
+<div class="tab-pane" id="link2" aria-expanded="false">
+    <table class="table">
+        <thead>
+        <tr>
+            <th class="text-center"></th>
+            <th>Nombre del servicio</th>
+            <th>Nombre del profesional</th>
+            <th>Veces solicitado</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#serviceOBF}}
+        <tr>
+            <td class="text-center">1</td>
+            <td>{{serviceName}}</td>
+            <td>{{#professionals}}{{name}}{{/professionals}}</td>
+            <td>{{frequency}} </td>
+            <td class="td-actions text-right">
+                <button type="button" rel="tooltip" class="btn btn-primary btn-round">
+                    consultar
+                </button>
+            </td>
+        </tr>
+        {{/serviceOBF}}
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,27 @@
+<div class="tab-pane" id="link4" aria-expanded="false">
+    <table class="table">
+        <thead>
+        <tr>
+            <th class="text-center"></th>
+            <th>Nombre del profesional</th>
+            <th>Servicios solicitados</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#service}}
+        {{#professionals}}
+        <tr>
+            <td class="text-center">1</td>
+            <td>{{name}}</td>
+            <td></td>
+            <td class="td-actions text-right">
+                <button type="button" rel="tooltip" class="btn btn-primary btn-simple btn-round" data-toggle="modal" data-target="#listaSolicitudes">
+                    solicitudes
+                </button>
+            </td>
+        </tr>
+        {{/professionals}}
+        {{/service}}
+        </tbody>
+    </table>
+</div>
