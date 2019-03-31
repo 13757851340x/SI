@@ -25,10 +25,10 @@ public class MyAppApplication {
             serviceRepository.deleteAll();
             userRepository.deleteAll();
             professionalRepository.deleteAll();
-            Customer user1 = new Customer("customer", "pass", "name", "surname", "customer", "birthday", "city");
-            Professional user2 = new Professional("professional1", "pass", "Pepito", "surname", "professional", "birthday", "city",0);
-            Professional user4 = new Professional("professional2", "pass", "Juana", "surname", "professional", "birthday", "city",0);
-            Analyst user3 = new Analyst("analyst", "pass", "name", "surname", "analyst", "birthday", "city");
+            Customer user1 = new Customer("andres@customer.com", "pass", "Andres", "surname", "customer", "birthday", "city");
+            Professional user2 = new Professional("pepiti@professional.com", "pass", "Pepito", "surname", "professional", "birthday", "city",0);
+            Professional user4 = new Professional("juana@professional.com", "pass", "Juana", "surname", "professional", "birthday", "city",0);
+            Analyst user3 = new Analyst("raul@analyst.com", "pass", "Raul", "surname", "analyst", "birthday", "city");
             user1 = userRepository.save(user1);
             user2 = userRepository.save(user2);
             user3 = userRepository.save(user3);
