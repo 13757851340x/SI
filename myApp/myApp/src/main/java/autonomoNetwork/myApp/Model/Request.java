@@ -17,7 +17,6 @@ public class Request {
     @NotNull
     @ManyToOne(cascade = CascadeType.DETACH)
     private Customer customer;
-
     private String professional;
     @JoinColumn(nullable = false)
     @NotNull
@@ -65,10 +64,8 @@ public class Request {
     }
 
 
-    public Service addService (Service service){
-        service.setFrequency(service.getFrequency()+1);
+    public void addService (Service service){
         this.serviceRequested=service;
-        return service;
     }
 
     public void setState(){
@@ -79,4 +76,7 @@ public class Request {
         return this.serviceRequested;
     }
 
+    public String getProfessional() {
+        return professional;
+    }
 }

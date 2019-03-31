@@ -8,20 +8,19 @@
         </tr>
         </thead>
         <tbody>
-        {{#service}}
-        {{#professionals}}
+        {{#professional}}
         <tr>
             <td class="text-center">1</td>
             <td>{{name}}</td>
-            <td></td>
+            <td>{{frequency}}</td>
             <td class="td-actions text-right">
-                <button type="button" rel="tooltip" class="btn btn-primary btn-simple btn-round" data-toggle="modal" data-target="#listaSolicitudes">
+                <button type="button" rel="tooltip" class="btn btn-primary btn-simple btn-round" data-toggle="modal" data-target="#listaSolicitudes"
+                data-username="{{username}}" onclick="professional(this)">
                     solicitudes
                 </button>
             </td>
         </tr>
-        {{/professionals}}
-        {{/service}}
+        {{/professional}}
         </tbody>
     </table>
 </div>

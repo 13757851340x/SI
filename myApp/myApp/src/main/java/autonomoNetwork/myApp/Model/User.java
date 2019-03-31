@@ -55,4 +55,8 @@ public class User {
     public String getRole() {
         return profile;
     }
+
+    public String getName() {
+        return name;
+    }
 }

@@ -1,15 +1,13 @@
 package autonomoNetwork.myApp.Controller;
 
-import autonomoNetwork.myApp.Model.Analyst;
-import autonomoNetwork.myApp.Model.Customer;
-import autonomoNetwork.myApp.Model.Service;
-import autonomoNetwork.myApp.Model.User;
+import autonomoNetwork.myApp.Model.*;
 import autonomoNetwork.myApp.Repository.*;
 import autonomoNetwork.myApp.Service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
@@ -37,6 +35,7 @@ public class MustacheController {
         User user=userService.getCurrentUser();
         List<Service> serviceOrderbyFrequency= serviceRepository.findAllByOrderByFrequencyDesc();
         List<Service> noDemandedService = serviceRepository.findByFrequency(0);
+        List<Professional> professionals = professionalRepository.findAllByOrderByFrequency();
         if (user.getRole().equals("professional")){
             user = professionalRepository.findById(user.getUsername()).get();
             model.addAttribute("user",user);
@@ -49,6 +48,7 @@ public class MustacheController {
         }
         model.addAttribute("serviceOBF",serviceOrderbyFrequency);
         model.addAttribute("noDemanded",noDemandedService);
+        model.addAttribute("professional",professionals);
         return "index";
     }
 
@@ -77,4 +77,9 @@ public class MustacheController {
         return this.index(model);
     }
 
+    @GetMapping("/requestModal/{professional}")
+    public String requestModal (Model model, @PathVariable Professional professional){
+        model.addAttribute("modalUser",professional);
+        return "modalTable";
+    }
 }

@@ -26,6 +26,16 @@ $(document).ready(function () {
     });
 });
 
+function professional(element){
+    var username = $(element).data("username");
+    $.ajax({
+        "url": "/requestModal/"+username,
+        "method": "GET"
+    }).done(function (data) {
+        $("#listaSolicitudesTable").html(data);
+    });
+}
+
 
 function requestTime(element) {
     var requestDate = Date.now().toString();
@@ -38,14 +48,14 @@ function requestTime(element) {
 
 function serviceData(element) {
     var id = $(element).data("id");
-    var username = $(element).data("username");
+    var professional = $(element).data("professional");
     var name = $(element).data("name");
     var category = $(element).data("category");
     var estimateTime = $(element).data("estimate_time");
     var cost = $(element).data("cost");
     var description = $(element).data("description");
     $("#modal_id").val(id);
-    $("#modal_username").val(username);
+    $("#modal_professional").val(professional);
     $("#modal_name").val(name);
     $("#modal_category").val(category);
     $("#modal_estimateTime").val(estimateTime);

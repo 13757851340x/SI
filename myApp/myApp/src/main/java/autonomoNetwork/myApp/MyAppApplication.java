@@ -52,7 +52,7 @@ public class MyAppApplication {
             Request request1 = new Request("23/07-17:00", "21/07", "C/Tulipan", 30.50, false, "descrption");
             request1.addCustomer(user1);
             request1.addProfessional("p2");
-            service=request1.addService(service);
+            request1.addService(service);
             serviceRepository.save(service);
             request1 = requestRepository.save(request1);
             user1.addRequest(request1);
@@ -60,7 +60,7 @@ public class MyAppApplication {
             Request request2= new Request("12/03-12:00", "11/05", "C/san", 30.50, false, "descrption");
             request2.addCustomer(user1);
             request2.addProfessional("p2");
-            service=request2.addService(service);
+            request2.addService(service);
             serviceRepository.save(service);
             requestRepository.save(request2);
             user1.addRequest(request2);

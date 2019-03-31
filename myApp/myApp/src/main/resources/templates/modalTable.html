@@ -1,0 +1,23 @@
+<table class="table">
+    <thead>
+    <tr>
+        <th class="text-center"></th>
+        <th>Fecha solicitud</th>
+        <th>Nombre del cliente</th>
+        <th>Estado</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#modalUser}}
+    {{#services}}
+    {{#requests}}
+    <tr>
+        <td class="text-center">1</td>
+        <td>{{requestDate}}</td>
+        <td>{{customer.name}}</td>
+        <td>{{state}}</td>
+    </tbody>
+    {{/requests}}
+    {{/services}}
+    {{/modalUser}}
+</table>

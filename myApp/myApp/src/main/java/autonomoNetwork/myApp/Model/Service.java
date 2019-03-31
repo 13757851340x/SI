@@ -76,6 +76,7 @@ public class Service {
             this.requests=new ArrayList<>();
         }
         request.addService(this);
+
         this.requests.add(request);
     }
 
