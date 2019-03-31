@@ -33,8 +33,6 @@ public class Service {
     @ElementCollection
     private List<String> citys;
     private int frequency;
-    public boolean completed;
-    public int requestCompleted;
     public double totalBenefit;
 
     @ManyToMany(cascade = CascadeType.DETACH)
@@ -44,15 +42,13 @@ public class Service {
     @OneToMany(mappedBy = "serviceRequested", cascade = CascadeType.ALL)
     private List<Request> requests;
 
-    public Service(@NotNull String serviceName, @NotNull String description, @NotNull String category, @NotNull int estimateTime, @NotNull double cost,int frequency,boolean completed,int requestCompleted,int totalBenefit) {
+    public Service(@NotNull String serviceName, @NotNull String description, @NotNull String category, @NotNull int estimateTime, @NotNull double cost,int frequency,int totalBenefit) {
         this.serviceName = serviceName;
         this.description = description;
         this.category = category;
         this.estimateTime = estimateTime;
         this.cost = cost;
         this.frequency=frequency;
-        this.completed=completed;
-        this.requestCompleted=requestCompleted;
         this.totalBenefit=totalBenefit;
     }
 
@@ -101,5 +97,17 @@ public class Service {
 
     public void setFrequency(int frequency){
         this.frequency=frequency;
+    }
+
+    public double getTotalBenefit() {
+        return totalBenefit;
+    }
+
+    public void setTotalBenefit(double totalBenefit) {
+        this.totalBenefit = totalBenefit;
+    }
+
+    public double getCost() {
+        return cost;
     }
 }

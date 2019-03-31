@@ -52,7 +52,7 @@ public class RequestController {
         request.setState();
         Service service = request.getServiceRequested();
         service.setFrequency(service.getFrequency() + 1);
-
+        service.setTotalBenefit(service.getTotalBenefit()+service.getCost());
         requestRepository.save(request);
         return ResponseEntity.noContent().build();
     }

@@ -10,17 +10,15 @@
         </tr>
         </thead>
         <tbody>
-        {{#service}}
+        {{#serviceOBF}}
         <tr>
-
             <td class="text-center">1</td>
             <td>{{serviceName}}</td>
-            <td>{{#professionals}}{{name}},{{/professionals}}</td>
-            <td></td>
-            <td></td>
-
+            <td>{{#professionals}}{{name}}  {{/professionals}}</td>
+            <td>{{frequency}}</td>
+            <td>{{totalBenefit}}</td>
         </tr>
-        {{/service}}
+        {{/serviceOBF}}
         </tbody>
     </table>
 </div>

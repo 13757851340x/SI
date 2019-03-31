@@ -33,8 +33,8 @@ public class MyAppApplication {
             user2 = userRepository.save(user2);
             user3 = userRepository.save(user3);
             user4 = userRepository.save(user4);
-            Service service = new Service("corte de pelo", "incluye el lavado", "peluquería", 3, 23.30,0,false,0,0);
-            Service service2 = new Service("afeitado", "efectivo y rápido", "peluquería", 3, 23.30,0,false,0,0);
+            Service service = new Service("corte de pelo", "incluye el lavado", "peluquería", 3, 23.30,0,0);
+            Service service2 = new Service("afeitado", "efectivo y rápido", "peluquería", 3, 23.30,0,0);
             serviceRepository.save(service);
             serviceRepository.save(service2);
             service.addUser(user2);
